@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\user\Desktop\Repostory\OfferApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Customer/CustumerList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3VzdHVtZXJMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/Desktop/Repostory/OfferApp/Views/Login/LoginProcedures.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5Qcm9jZWR1cmVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -102,7 +102,7 @@
                                 <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                             </li>
                             <li><a class="nav-link menu-title" asp-controller="Home" asp-action="Index"><span>Ana Sayfa</span></a></li>
-                            <li><a class="nav-link menu-title" asp-controller="Musteri" asp-action="MusteriList"><span>Müşteriler</span></a></li>
+                            <li><a class="nav-link menu-title" asp-controller="Customer" asp-action="CustumerList"><span>Müşteriler</span></a></li>
                             <li><a class="nav-link menu-title" asp-controller="Stoklar" asp-action="Stoklar"><span>Ürünler</span></a></li>
                             <li><a class="nav-link menu-title" asp-controller="Users" asp-action="Users"><span>Kullanıcılar</span></a></li>
                             <li><a class="nav-link menu-title" asp-controller="Users" asp-action="CandidateUsers"><span>Aday Kullanıcılar</span></a></li>
@@ -177,15 +177,11 @@
     <script src="~/js/ecommerce.js"></script>
     <script src="~/js/product-list-custom.js"></script>
     <script src="~/js/Global.js"></script>
-
+    <script src="~/js/genericajax.js"></script>
 
     <!-- login js-->
     <!-- Plugin used-->
 
-
-    <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalContracts" aria-hidden="true"></div>
-    <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalContracts" aria-hidden="true"></div>
-    <div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalContracts" aria-hidden="true"></div>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

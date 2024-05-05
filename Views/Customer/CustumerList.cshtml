@@ -1,0 +1,95 @@
+
+@{
+    ViewData["Title"] = "Müşteriler";
+
+}
+
+<div class="container-fluid list-products">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h5>Müşteriler</h5>
+                </div>
+                <div class="card-header pb-0 text-right" >
+                    <a class="btn btn-primary" asp-controller="Users" asp-action="CreateUser"><span>Müşteriler Oluştur</span></a>
+                 
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive product-table">
+                        <table class="display" id="basic-1">
+                            <thead>
+                                <tr>
+                                    <th>UserId</th>
+                                    <th>Kayıt Tarihi</th>
+                                    <th>Adı</th>
+                                    <th>Soyadı</th>
+                                    <th>EMail</th>
+                                    <th>Paralo</th>
+                                    <th>Admin Mi</th>
+                                    <th>Durumu</th>
+                                    <th>Statü Değiştir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               @*  @foreach(var User in Model)
+                                {
+                                <tr>
+                                  
+                                        <td>@User.UserId</td>
+                                        <td>@User.CreDate</td>
+                                        <td class="font-success">@User.Name</td>
+                                        <td>@User.Surname</td>
+                                        <td>@User.Email</td>
+                                        <td>@User.Password</td>
+                                        <td>
+                                            @if (User.IsAdmin == false)
+                                            {
+                                                <span class="badge bg-danger text-white">Hayır</span>
+                                            }
+                                            else if (User.IsAdmin == true)
+                                            {
+                                                <span class="badge bg-success text-white">Evet</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (User.IsPasivve == false)
+                                            {
+                                                <span class="badge bg-success text-white">Aktif</span>
+                                            }
+                                            else if (User.IsPasivve == true)
+                                            {
+                                                <span class="badge bg-danger text-white">Pasif</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (User.IsPasivve == false)
+                                            {
+                                                <form method="post" asp-controller="Users" asp-action="UserStatuUpdate">
+                                                    <input type="hidden" name="userId" value="@User.UserId" />
+                                                    <button type="submit" class="btn btn-danger btn-xs">Pasif Yap</button>
+                                                </form>
+                                            }
+                                            else if (User.IsPasivve == true)
+                                            {
+                                                <form method="post" asp-controller="Users" asp-action="UserStatuUpdate">
+                                                    <input type="hidden" name="userId" value="@User.UserId" />
+                                                    <button type="submit" class="btn btn-primary btn-xs">Aktif Yap</button>
+                                                </form>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="/Users/UpdateUser/@User.UserId" ><li data-feather="edit"></li></a>
+                                        <td>
+                                 </tr>
+                                } *@
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
