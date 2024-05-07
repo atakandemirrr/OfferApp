@@ -1,0 +1,59 @@
+@model List<OfferApp.Models.Product>
+@{
+    ViewData["Title"] = "Müşteriler";
+
+}
+
+<div class="container-fluid list-products">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h5>Ürünler</h5>
+                </div>
+                <div class="card-header pb-0 text-right">
+                    <a class="btn btn-primary" asp-controller="Users" asp-action="CreateUser"><span>Ürün Oluştur</span></a>
+                </div>
+                <br />
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Large modal</button>
+                <br />
+                <a id="btnOpenModal" data-url="Customer/CreateCustomer" action="1" class="btn btn-primary" href="#"> aaaaa</a>
+                <div class="card-body">
+                    <div class="table-responsive product-table">
+                        <table class="display" id="basic-1">
+                            <thead>
+                                <tr>
+                                    <th>Kodu</th>
+                                    <th>Adı</th>
+                                    <th>Fiyat</th>
+                                    <th>Adet</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var Product in Model)
+                                {
+                                    <tr>
+
+                                        <td>@Product.Code</td>
+                                        <td>@Product.Name</td>
+                                        <td class="font-success">@Product.Price</td>
+                                        <td>@Product.Piece</td>
+
+                                        <td>
+                                            <a href="/Users/UpdateUser/@Product.UserTableId"><li data-feather="edit"></li></a>
+                                        <td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ModalNew" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+</div>
+

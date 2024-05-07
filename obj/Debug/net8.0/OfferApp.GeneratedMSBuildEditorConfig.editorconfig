@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\user\Desktop\Repostory\OfferApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Customer/CreateCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlQ3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/Desktop/Repostory/OfferApp/Views/Customer/CustumerList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3VzdHVtZXJMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -28,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/Desktop/Repostory/OfferApp/Views/Panel/PanelPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuZWxcUGFuZWxQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Product/ProductList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0TGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Desktop/Repostory/OfferApp/Views/Shared/Error.cshtml]

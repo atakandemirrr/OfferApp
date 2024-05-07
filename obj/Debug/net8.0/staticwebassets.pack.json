@@ -4537,6 +4537,10 @@
       "PackagePath": "staticwebassets\\images\\user\\user.png"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\js\\GenericAjax.js",
+      "PackagePath": "staticwebassets\\js\\GenericAjax.js"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\js\\Global.js",
       "PackagePath": "staticwebassets\\js\\Global.js"
     },

@@ -1,0 +1,2 @@
+
+/////Modal açma fonsiyonu

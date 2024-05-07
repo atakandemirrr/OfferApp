@@ -342,53 +342,53 @@ function Select2Creator() {
 
     });
 }
-//var Modal1 = $('#Modal1');
-//var Modal2 = $('#Modal2');
-//var Modal3 = $('#Modal3');
-//$(document).on('click', '#btnOpenModal', async function () {
-//    await ModalOpen($(this), function () {
+var Modal1 = $('#Modal1');
+var Modal2 = $('#Modal2');
+var Modal3 = $('#Modal3');
+$(document).on('click', '#btnOpenModal', async function () {
+    await ModalOpen($(this), function () {
 
-//    });
-//});
-//async function ModalOpen(button, callback) {
-//    var url = button.attr("data-url");
-//    var zindex = button.attr("data-zindex");
+    });
+});
+async function ModalOpen(button, callback) {
+    var url = button.attr("data-url");
+    var zindex = button.attr("data-zindex");
 
-//    switch (zindex) {
-//        case "1":
-//            await Modal1.load(url, async function () {
-//                await Modal1.modal('show');
-//                TimeCreator();
-//                if (callback) {
-//                    callback();
-//                }
-//                document.querySelector("body").style.paddingRight = 0
-//            });
-//            break;
-//        case "2":
-//            await Modal2.load(url, async function () {
-//                await Modal2.modal('show');
-//                TimeCreator();
-//                if (callback) {
-//                    callback();
-//                }
-//                document.querySelector("body").style.paddingRight = 0
-//            });
-//            break;
-//        case "3":
-//            await Modal3.load(url, async function () {
-//                await Modal3.modal('show');
-//                TimeCreator();
-//                if (callback) {
-//                    callback();
-//                }
-//                document.querySelector("body").style.paddingRight = 0
-//            });
-//            break;
-//        default:
-//    }
+    switch (zindex) {
+        case "1":
+            await Modal1.load(url, async function () {
+                await Modal1.modal('show');
+                TimeCreator();
+                if (callback) {
+                    callback();
+                }
+                document.querySelector("body").style.paddingRight = 0
+            });
+            break;
+        case "2":
+            await Modal2.load(url, async function () {
+                await Modal2.modal('show');
+                TimeCreator();
+                if (callback) {
+                    callback();
+                }
+                document.querySelector("body").style.paddingRight = 0
+            });
+            break;
+        case "3":
+            await Modal3.load(url, async function () {
+                await Modal3.modal('show');
+                TimeCreator();
+                if (callback) {
+                    callback();
+                }
+                document.querySelector("body").style.paddingRight = 0
+            });
+            break;
+        default:
+    }
 
-//}
+}
 
 $(document).on('click', '#btnCloseModal', async function () {
     var zindex = $(this).attr("data-zindex");

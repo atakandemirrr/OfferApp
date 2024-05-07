@@ -4,7 +4,7 @@ using OfferApp.Models;
 
 namespace OfferApp.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class CustomerController : Controller
     {
         public readonly DataContext _context;
@@ -18,7 +18,21 @@ namespace OfferApp.Controllers
         public IActionResult CustumerList()
         {
             var CustomerList = _context.Customers.ToList();
-            return Json(CustomerList);
+            return View(CustomerList);
         }
+
+
+
+   
+        public PartialViewResult CreateCustomer()
+        {
+
+
+            return PartialView("CreateCustumer");
+        }
+        
+
+
+     
     }
 }

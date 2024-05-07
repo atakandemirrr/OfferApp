@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hkr2qMD5ibI0Hwajn4gWr+Z1B0x+uRg6pPtqNK0oH3g=",
+  "Hash": "eUNQfnqObKc3ViaAgrVFD4gD0UcNER1GMozYokWeiuY=",
   "Source": "OfferApp",
   "BasePath": "_content/OfferApp",
   "Mode": "Default",
@@ -31327,6 +31327,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\general-widget.js"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\js\\GenericAjax.js",
+      "SourceId": "OfferApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\",
+      "BasePath": "_content/OfferApp",
+      "RelativePath": "js/GenericAjax.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\GenericAjax.js"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\js\\Global.js",

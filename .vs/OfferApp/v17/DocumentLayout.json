@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\wwwroot\\js\\genericajax.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:wwwroot\\js\\genericajax.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\views\\product\\productlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\product\\productlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\models\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:models\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,7 +17,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 299,
+          "DockedHeight": 315,
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -27,14 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GenericAjax.js",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\js\\GenericAjax.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\GenericAjax.js",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\js\\GenericAjax.js",
-              "RelativeToolTip": "wwwroot\\js\\GenericAjax.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-05-05T19:23:48.462Z",
+              "Title": "ProductList.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Product\\ProductList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\ProductList.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Product\\ProductList.cshtml",
+              "RelativeToolTip": "Views\\Product\\ProductList.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-07T18:13:00.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Models\\DataContext.cs",
+              "RelativeDocumentMoniker": "Models\\DataContext.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Models\\DataContext.cs",
+              "RelativeToolTip": "Models\\DataContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T18:10:53.406Z",
               "EditorCaption": ""
             }
           ]

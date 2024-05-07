@@ -74,6 +74,48 @@ namespace OfferApp.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("OfferApp.Models.Product", b =>
+                {
+                    b.Property<int>("UserTableId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserTableId"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CreateUser")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Piece")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("RecordGuid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UpdateUser")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserTableId");
+
+                    b.ToTable("Products");
+                });
+
             modelBuilder.Entity("OfferApp.Models.User", b =>
                 {
                     b.Property<int>("UserTableId")

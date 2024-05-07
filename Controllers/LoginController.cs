@@ -51,5 +51,13 @@ namespace OfferApp.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> LogOut() /*Çıkış İşlemi İçin Kullanılıcak*/
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("LoginPage", "Login");
+
+        }
     }
 }
