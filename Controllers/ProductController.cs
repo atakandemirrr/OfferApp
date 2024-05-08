@@ -11,10 +11,18 @@ namespace OfferApp.Controllers
         {
             _context = context;
         }
+        [HttpGet]
         public IActionResult ProductList()
         {
             var ProductList = _context.Products.ToList();
             return View(ProductList);
+        }
+
+        [HttpGet]
+        public IActionResult CreateProduct()
+        {
+            
+            return View();
         }
     }
 }
