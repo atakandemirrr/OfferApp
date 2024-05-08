@@ -1,0 +1,67 @@
+@model OfferApp.ViewModels.VMCustomers
+
+
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myLargeModalLabel">Müşteri Bilgileri</h4>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        @Html.HiddenFor(x=>x.Customer.u)
+        <div class="modal-body">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label">Ünvan</label>
+                            @Html.TextBoxFor(x => x.Customer.Name, new { @class = "form-control", @type = "text" })
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Müşteri Kodu</label>
+                            @Html.TextBoxFor(x => x.Customer.Code, new { @class = "form-control", @type = "text" })
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Vergi No</label>
+                            @Html.TextBoxFor(x => x.Customer.VkNo, new { @class = "form-control", @type = "text" })
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Email Adresi</label>
+                            @Html.TextBoxFor(x => x.Customer.Email, new { @class = "form-control", @type = "Email" })
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Ülke</label>
+                            @Html.TextBoxFor(x => x.Customer.Country, new { @class = "form-control", @type = "text" })
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+
+                    <label class="form-label">Adres</label>
+                    @Html.TextAreaFor(x => x.Customer.Country, new { @class = "form-control", @rows = "5" })
+
+
+                </div>
+            </div>
+            <br />
+            <div class="card-footer text-end">
+                <button class="btn btn-primary" type="submit">Müşteri Oluştur</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

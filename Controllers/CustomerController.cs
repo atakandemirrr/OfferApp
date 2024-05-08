@@ -23,12 +23,16 @@ namespace OfferApp.Controllers
 
 
 
-   
-        public PartialViewResult CreateCustomer()
+        [Route("Customer/CreateCustomer")]
+        [Route("Customer/CreateCustomer/{CustomerId}")]
+        public PartialViewResult CreateCustomer(int CustomerId=0)
         {
+            ViewModels.VMCustomers model = new ViewModels.VMCustomers();
+            if (CustomerId != 0)
+                model.Customer = _context.Customers.Where(x => x.UserTableId == CustomerId).FirstOrDefault();
+             
 
-
-            return PartialView("CreateCustumer");
+            return PartialView("Subpages/_CreateCustomer", model);
         }
         
 

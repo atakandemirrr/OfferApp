@@ -3,6 +3,10 @@
     ViewData["Title"] = "Müşteriler";
 
 }
+@section Scripts{
+    <script src="/js/customer/customer.js"></script>
+
+}
 
 <div class="container-fluid list-products">
     <div class="row">
@@ -12,7 +16,10 @@
                     <h5>Müşteriler</h5>
                 </div>
                 <div class="card-header pb-0 text-right">
-                    <a class="btn btn-primary" asp-controller="Users" asp-action="CreateUser"><span>Müşteriler Oluştur</span></a> </div>
+                    @* <a class="btn btn-primary" id="btnCreateCustomer" ><span>Müşteriler Oluştur</span></a> </div> *@
+                    <a class="btn btn-primary" id="btnOpenModal" data-url="/Customer/CreateCustomer" data-zindex="1"><span>Müşteriler Oluştur</span></a>
+                </div>
+
                     <br />
                 <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Large modal</button>
                 <br />
@@ -56,6 +63,6 @@
     </div>
 </div>
 
-<div id="ModalNew" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="MCreateCustomer" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 </div>
 

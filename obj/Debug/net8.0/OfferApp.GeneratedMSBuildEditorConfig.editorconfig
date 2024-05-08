@@ -18,12 +18,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Projelerim\OfferApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Projelerim/OfferApp/Views/Customer/CreateCustomer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlQ3VzdG9tZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Projelerim/OfferApp/Views/Customer/CustumerList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3VzdHVtZXJMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projelerim/OfferApp/Views/Customer/Subpages/_CreateCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcU3VicGFnZXNcX0NyZWF0ZUN1c3RvbWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projelerim/OfferApp/Views/Login/LoginProcedures.cshtml]
