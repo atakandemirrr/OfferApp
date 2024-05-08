@@ -35,7 +35,7 @@ namespace OfferApp.Controllers
 
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, p.Email)
+                    new Claim(ClaimTypes.Name, data.UserTableId.ToString())
                 };
                 var userIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new AuthenticationProperties
