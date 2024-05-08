@@ -1,0 +1,63 @@
+@model List<OfferApp.Models.Customer>
+@{
+    ViewData["Title"] = "Müşteriler";
+
+}
+@section Scripts{
+    <script src="/AppJs/customer.js"></script>
+}
+
+<div class="container-fluid list-products">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h5>Müşteriler</h5>                   
+                    <p>Kullanıcı Kimliği: @User.Identity.Name</p>                
+                </div>
+                <div class="card-header pb-0 text-right">
+                    @* <a class="btn btn-primary" id="btnCreateCustomer" ><span>Müşteriler Oluştur</span></a> </div> *@
+                    <a class="btn btn-primary" id="btnOpenModal" data-url="/Customer/CreateCustomer" data-zindex="1"><span>Müşteriler Oluştur</span></a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive product-table">
+                        <table class="display" id="basic-1">
+                            <thead>
+                                <tr>
+                                    <th>Kodu</th>
+                                    <th>Unvanı</th>
+                                    <th>VkNo</th>
+                                    <th>Email</th>
+                                    <th>Ükle</th>
+                                    <th>Adresi</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="CustomerTable">
+                                @foreach (var Customer in Model)
+                                {
+                                    <tr>
+
+                                        <td>@Customer.Code</td>
+                                        <td>@Customer.Name</td>
+                                        <td class="font-success">@Customer.VkNo</td>
+                                        <td>@Customer.Email</td>
+                                        <td>@Customer.Country</td>
+                                        <td>@Customer.Address</td>
+                                        <td>
+                                            <a id="editCustomer" data-userTableId="@Customer.UserTableId" href="#"><li data-feather="edit"></li></a>
+                                        <td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="MCreateCustomer" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+</div>
+

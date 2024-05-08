@@ -1,5 +1,10 @@
 @model OfferApp.ViewModels.VMCustomers
 
+@section Scripts {
+    <script src="/AppJs/customer.js"></script>
+
+
+}
 
 <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -7,41 +12,42 @@
             <h4 class="modal-title" id="myLargeModalLabel">Müşteri Bilgileri</h4>
             <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        @Html.HiddenFor(x => x.Customer.UserTableId)
-    
+        @Html.HiddenFor(x => x.Customer.UserTableId, new {  @id = "UserTableID" })
+        <input id="CreateDate" type="hidden" value="@DateTime.Today.ToString("yyyy-MM-dd")">
+        <input id="CreateUser" type="hidden" value="@User.Identity.Name">
        <div class="modal-body">
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-md-12">
                         <div class="mb-3">
                             <label class="form-label">Ünvan</label>
-                            @Html.TextBoxFor(x => x.Customer.Name, new { @class = "form-control", @type = "text" })
+                            @Html.TextBoxFor(x => x.Customer.Name, new { @class = "form-control", @type = "text",@id="Name" })
 
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Müşteri Kodu</label>
-                            @Html.TextBoxFor(x => x.Customer.Code, new { @class = "form-control", @type = "text" })
+                            @Html.TextBoxFor(x => x.Customer.Code, new { @class = "form-control", @type = "text", @id = "Code" })
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Vergi No</label>
-                            @Html.TextBoxFor(x => x.Customer.VkNo, new { @class = "form-control", @type = "text" })
+                            @Html.TextBoxFor(x => x.Customer.VkNo, new { @class = "form-control", @type = "text", @id = "VkNo" })
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Email Adresi</label>
-                            @Html.TextBoxFor(x => x.Customer.Email, new { @class = "form-control", @type = "Email" })
+                            @Html.TextBoxFor(x => x.Customer.Email, new { @class = "form-control", @type = "Email", @id = "Email" })
 
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Ülke</label>
-                            @Html.TextBoxFor(x => x.Customer.Country, new { @class = "form-control", @type = "text" })
+                            @Html.TextBoxFor(x => x.Customer.Country, new { @class = "form-control", @type = "text", @id = "Country" })
 
                         </div>
                     </div>
@@ -50,14 +56,14 @@
                 <div class="col-md-12">
 
                     <label class="form-label">Adres</label>
-                    @Html.TextAreaFor(x => x.Customer.Country, new { @class = "form-control", @rows = "5" })
+                    @Html.TextAreaFor(x => x.Customer.Address, new { @class = "form-control", @rows = "5", @id = "Address" })
 
 
                 </div>
             </div>
             <br />
             <div class="card-footer text-end">
-                <button class="btn btn-primary" type="submit">Müşteri Oluştur</button>
+                <button id="CreateCustomer" class="btn btn-primary" type="submit">Kaydet</button>
             </div>
         </div>
     </div>

@@ -27,7 +27,7 @@ namespace OfferApp.Migrations
                     CreateUser = table.Column<int>(type: "int", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateUser = table.Column<int>(type: "int", nullable: false),
-                    RecordGuid = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    
                 },
                 constraints: table =>
                 {
@@ -48,7 +48,7 @@ namespace OfferApp.Migrations
                     CreateUser = table.Column<int>(type: "int", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateUser = table.Column<int>(type: "int", nullable: false),
-                    RecordGuid = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    
                 },
                 constraints: table =>
                 {
@@ -71,7 +71,7 @@ namespace OfferApp.Migrations
                     CreateUser = table.Column<int>(type: "int", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateUser = table.Column<int>(type: "int", nullable: false),
-                    RecordGuid = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                   
                 },
                 constraints: table =>
                 {
