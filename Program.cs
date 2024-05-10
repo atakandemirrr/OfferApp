@@ -1,11 +1,15 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 using OfferApp.Models;
+using System.Globalization;
 
 
-var builder = WebApplication.CreateBuilder(args);
+    
+
+    var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataConnection")));
 
@@ -32,6 +36,11 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
+var culture = new CultureInfo("tr-TR");
+culture.NumberFormat.NumberDecimalSeparator = ".";
+CultureInfo.DefaultThreadCurrentCulture = culture;
+CultureInfo.DefaultThreadCurrentUICulture = culture;
 
 app.MapControllerRoute(
     name: "default",

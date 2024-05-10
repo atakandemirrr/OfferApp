@@ -16,36 +16,35 @@
                 <div class="card-header pb-0 text-right">
                     <a class="btn btn-primary" id="btnOpenModal" data-url="/Product/CreateProduct" data-zindex="1"><span>Ürün Oluştur</span></a>
                 </div>
-                <div class="card-body">
-                    <div class="table-responsive product-table">
-                        <table class="display" id="basic-1">
-                            <thead>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Kodu</th>
+                                <th>Adı</th>
+                                <th>Fiyat</th>
+                                <th>Adet</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="ProductTable">
+                            @foreach (var Product in Model)
+                            {
                                 <tr>
-                                    <th>Kodu</th>
-                                    <th>Adı</th>
-                                    <th>Fiyat</th>
-                                    <th>Adet</th>
 
+                                    <td>@Product.Code</td>
+                                    <td>@Product.Name</td>
+                                    <td class="font-success">@Product.Price</td>
+                                    <td>@Product.Piece</td>
+
+                                    <td>
+                                        <a id="editProduct" data-userTableId="@Product.UserTableId" href="#"><li data-feather="edit"></li></a>
+                                    <td>
                                 </tr>
-                            </thead>
-                            <tbody id="ProductTable" >
-                                @foreach (var Product in Model)
-                                {
-                                    <tr>
+                            }
+                        </tbody>
+                    </table>
 
-                                        <td>@Product.Code</td>
-                                        <td>@Product.Name</td>
-                                        <td class="font-success">@Product.Price</td>
-                                        <td>@Product.Piece</td>
-
-                                        <td>
-                                            <a id="editProduct" data-userTableId="@Product.UserTableId" href="#" ><li data-feather="edit"></li></a>
-                                        <td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         </div>

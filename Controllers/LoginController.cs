@@ -56,7 +56,7 @@ namespace OfferApp.Controllers
         public async Task<IActionResult> LogOut() /*Çıkış İşlemi İçin Kullanılıcak*/
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("LoginPage", "Login");
+            return RedirectToAction("LoginProcedures", "Login");
 
         }
     }

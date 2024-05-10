@@ -57,7 +57,7 @@ namespace OfferApp.Controllers
                 }
 
             }
-
+            else { 
             var Product = new Product
             {
                 CreateDate = A.CreateDate,
@@ -79,6 +79,8 @@ namespace OfferApp.Controllers
             int userTableId = lastRecord.UserTableId;
 
             return Json(userTableId.ToString());
+            }
+            return Json("");
 
         }
     }
