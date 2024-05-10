@@ -3,7 +3,9 @@
     ViewData["Title"] = "Müşteriler";
 
 }
-
+@section Scripts {
+    <script src="/AppJs/product.js"></script>
+}
 <div class="container-fluid list-products">
     <div class="row">
         <div class="col-sm-12">
@@ -12,12 +14,8 @@
                     <h5>Ürünler</h5>
                 </div>
                 <div class="card-header pb-0 text-right">
-                    <a class="btn btn-primary" asp-controller="Users" asp-action="CreateUser"><span>Ürün Oluştur</span></a>
+                    <a class="btn btn-primary" id="btnOpenModal" data-url="/Product/CreateProduct" data-zindex="1"><span>Ürün Oluştur</span></a>
                 </div>
-                <br />
-                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Large modal</button>
-                <br />
-                <a id="btnOpenModal" data-url="Customer/CreateCustomer" action="1" class="btn btn-primary" href="#"> aaaaa</a>
                 <div class="card-body">
                     <div class="table-responsive product-table">
                         <table class="display" id="basic-1">
@@ -30,7 +28,7 @@
 
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="ProductTable" >
                                 @foreach (var Product in Model)
                                 {
                                     <tr>
@@ -41,7 +39,7 @@
                                         <td>@Product.Piece</td>
 
                                         <td>
-                                            <a href="/Users/UpdateUser/@Product.UserTableId"><li data-feather="edit"></li></a>
+                                            <a id="editProduct" data-userTableId="@Product.UserTableId" href="#" ><li data-feather="edit"></li></a>
                                         <td>
                                     </tr>
                                 }
@@ -54,6 +52,6 @@
     </div>
 </div>
 
-<div id="ModalNew" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="ModalCreateProduct" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 </div>
 

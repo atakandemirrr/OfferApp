@@ -1,0 +1,66 @@
+@model OfferApp.ViewModels.VMProduct
+
+@section Scripts {
+    <script src="/AppJs/product.js"></script>
+
+
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myLargeModalLabel">Ürün Bilgileri</h4>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        @Html.HiddenFor(x => x.Product.UserTableId, new { @id = "UserTableID" })
+        <input id="CreateDate" type="hidden" value="@DateTime.Today.ToString("yyyy-MM-dd")">
+        <input id="CreateUser" type="hidden" value="@User.Identity.Name">
+        <div class="modal-body">
+            <div class="card-body">
+
+                <div class="col-md-8">
+                    <div class="mb-3">
+                        <label class="form-label">Ürün Kodu</label>
+                        @Html.TextBoxFor(x => x.Product.Code, new { @class = "form-control", @type = "text", @id = "Code" })
+                    </div>
+                </div>
+                <div class="col-6 col-md-12">
+
+                    <div class="mb-3">
+                        <label class="form-label">Ürün Adı</label>
+                        @Html.TextBoxFor(x => x.Product.Name, new { @class = "form-control", @type = "text", @id = "Name" })
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Fiyat</label>
+                            @Html.TextBoxFor(x => x.Product.Price, new { @class = "form-control", @type = "number", @id = "Price" })
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Adet</label>
+                            @Html.TextBoxFor(x => x.Product.Piece, new { @class = "form-control", @type = "number", @id = "Piece" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="mb-3">
+                            <button id="CreateProduct" class="btn btn-primary" type="submit">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\",
+  "WorkspaceRootPath": "C:\\Projelerim\\OfferApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\views\\customer\\subpages\\_createcustomer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\customer\\subpages\\_createcustomer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\wwwroot\\appjs\\product.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:wwwroot\\appjs\\product.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\views\\product\\productlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\product\\productlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\views\\product\\subpages\\_createproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\product\\subpages\\_createproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\wwwroot\\appjs\\customer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:wwwroot\\appjs\\customer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\views\\customer\\customerlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\customer\\customerlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 185,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,63 +43,65 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-09T18:27:39.677Z",
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Projelerim\\OfferApp\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAkwDEAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T09:05:30.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "Controllers\\CustomerController.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAwwFMAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T17:41:21.782Z"
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Projelerim\\OfferApp\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-10T08:42:38.609Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "customer.js",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\AppJs\\customer.js",
-              "RelativeDocumentMoniker": "wwwroot\\AppJs\\customer.js",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\AppJs\\customer.js",
-              "RelativeToolTip": "wwwroot\\AppJs\\customer.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-05-08T12:26:27.049Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CustomerList.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Customer\\CustomerList.cshtml",
-              "RelativeDocumentMoniker": "Views\\Customer\\CustomerList.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Customer\\CustomerList.cshtml",
-              "RelativeToolTip": "Views\\Customer\\CustomerList.cshtml",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAAD4AAAAAAAAA",
+              "Title": "ProductList.cshtml",
+              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Views\\Product\\ProductList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\ProductList.cshtml",
+              "ToolTip": "C:\\Projelerim\\OfferApp\\Views\\Product\\ProductList.cshtml",
+              "RelativeToolTip": "Views\\Product\\ProductList.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACkAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-08T12:21:32.871Z"
+              "WhenOpened": "2024-05-10T08:26:01.655Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_CreateCustomer.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Customer\\Subpages\\_CreateCustomer.cshtml",
-              "RelativeDocumentMoniker": "Views\\Customer\\Subpages\\_CreateCustomer.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Customer\\Subpages\\_CreateCustomer.cshtml",
-              "RelativeToolTip": "Views\\Customer\\Subpages\\_CreateCustomer.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAiAAAA",
+              "Title": "product.js",
+              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\wwwroot\\AppJs\\product.js",
+              "RelativeDocumentMoniker": "wwwroot\\AppJs\\product.js",
+              "ToolTip": "C:\\Projelerim\\OfferApp\\wwwroot\\AppJs\\product.js",
+              "RelativeToolTip": "wwwroot\\AppJs\\product.js",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAwwFoAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-10T08:25:26.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_CreateProduct.cshtml",
+              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Views\\Product\\Subpages\\_CreateProduct.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Subpages\\_CreateProduct.cshtml",
+              "ToolTip": "C:\\Projelerim\\OfferApp\\Views\\Product\\Subpages\\_CreateProduct.cshtml",
+              "RelativeToolTip": "Views\\Product\\Subpages\\_CreateProduct.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAAMAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-08T12:22:07.095Z",
+              "WhenOpened": "2024-05-10T08:24:35.71Z",
               "EditorCaption": ""
             }
           ]

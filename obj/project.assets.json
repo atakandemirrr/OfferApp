@@ -4106,19 +4106,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "C:\\Users\\ataka\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\OfferApp.csproj",
+      "projectUniqueName": "C:\\Projelerim\\OfferApp\\OfferApp.csproj",
       "projectName": "OfferApp",
-      "projectPath": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\OfferApp.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\obj\\",
+      "projectPath": "C:\\Projelerim\\OfferApp\\OfferApp.csproj",
+      "packagesPath": "C:\\Users\\ataka\\.nuget\\packages\\",
+      "outputPath": "C:\\Projelerim\\OfferApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ataka\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
