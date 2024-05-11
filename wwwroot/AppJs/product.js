@@ -23,7 +23,7 @@ $(document).on('click', '#editProduct', async function () {
 //modal içerisindeki kaydet butonuna týklayýnca
 $(document).on('click', '#CreateProduct', async function () {
     var userTableId = $("#UserTableID").val();
-        DbIslemleri();
+    DbIslemleri();
 
 });
 function DbIslemleri() {
@@ -34,7 +34,7 @@ function DbIslemleri() {
     var UpdateUser = $("#CreateUser").val();
     var Code = $("#Code").val();
     var Name = $("#Name").val();
-    var Price = $("#Price").val();  
+    var Price = $("#Price").val();
     var Piece = $("#Piece").val();
 
     var CreateProduct = {
@@ -68,7 +68,7 @@ function DbIslemleri() {
         success: function (response) {
             if (userTableId == 0) {
                 var UserTableID = response;
-                var tr = '<tr><td>' + Code + '</td><td>' + Name + '</td><td>' + Price + '</td><td>' + Piece + '</td><td><a id="editProduct" data-userTableId="'+ UserTableID +'" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>';
+                var tr = '<tr><td>' + Code + '</td><td>' + Name + '</td><td>' + Price + '</td><td>' + Piece + '</td><td><a id="editProduct" data-userTableId="' + UserTableID + '" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>';
 
                 $("#ProductTable").append(tr);
                 Modal1.modal('hide');
@@ -79,4 +79,36 @@ function DbIslemleri() {
         }
     });
 }
+
+$(document).ready(function () {
+    var J = 1;
+    $.ajax({
+        url: '/Product/ProductList/' + J + '',
+        type: 'GET',
+        dataType: 'json',
+        success: function (Products) {
+            $.each(Products, function (index, Product) {
+                addRow(Product);
+            });
+            function addRow(Product) {
+                $('#ProductTable tbody').append('<tr><td>' + Product.code + '</td><td>' + Product.name + '</td><td>' + Product.price + '</td><td>' + Product.piece + '</td><td><a id="editProduct" data-userTableId="' + Product.userTableId + '" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>');
+
+            }
+        },
+        error: function (xhr, status, error) {
+            // Ýstek baþarýsýz olduðunda çalýþacak fonksiyon
+            console.error('Hata:', status, error);
+        }
+
+    });
+
+  
+
+});
+
+
+
+
+
+
 

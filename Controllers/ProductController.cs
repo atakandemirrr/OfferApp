@@ -12,9 +12,14 @@ namespace OfferApp.Controllers
             _context = context;
         }
         [HttpGet]
-        public IActionResult ProductList()
+        [Route("Product/ProductList")]
+        [Route("Product/ProductList/{J}")]
+        public IActionResult ProductList(int J = 0)
         {
+
             var ProductList = _context.Products.ToList();
+            if(J == 1)
+                return Json(ProductList);
             return View(ProductList);
         }
 

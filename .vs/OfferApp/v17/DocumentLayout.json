@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\wwwroot\\appjs\\product.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:wwwroot\\appjs\\product.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\views\\product\\productlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\product\\productlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 197,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAwwDoAAAA0AAAA",
+              "DocumentIndex": 1,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowBUAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T19:14:24.083Z",
+              "WhenOpened": "2024-05-11T20:00:36.306Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "product.js",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\AppJs\\product.js",
+              "RelativeDocumentMoniker": "wwwroot\\AppJs\\product.js",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\AppJs\\product.js",
+              "RelativeToolTip": "wwwroot\\AppJs\\product.js",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAuwF0AAADsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-11T19:57:57.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAAAIkAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-10T19:14:06.036Z",
+              "WhenOpened": "2024-05-11T19:57:08.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductList.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Product\\ProductList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\ProductList.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Product\\ProductList.cshtml",
+              "RelativeToolTip": "Views\\Product\\ProductList.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-11T19:52:47.494Z",
               "EditorCaption": ""
             }
           ]
