@@ -17,9 +17,13 @@ namespace OfferApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult CustomerList()
+        [Route("Customer/CustomerList")]
+        [Route("Customer/CustomerList/{C}")]
+        public IActionResult CustomerList(int C)
         {
             var CustomerList = _context.Customers.ToList();
+            if (C == 1)
+                return Json(CustomerList);
             return View(CustomerList);
         }
 
@@ -51,31 +55,35 @@ namespace OfferApp.Controllers
                 }
 
             }
-
-
-            var Customer = new Customer
+            else
             {
-                CreateDate = A.CreateDate,
-                CreateUser = A.CreateUser,
-                UpdateDate = A.UpdateDate,
-                UpdateUser = A.UpdateUser,
-                Code = A.Code,
-                Name = A.Name,
-                VkNo = A.VkNo,
-                Email = A.Email,
-                Country = A.Country,
-                Address = A.Address
-            };
 
 
-            _context.Customers.Add(Customer);
-            _context.SaveChanges();
+                var Customer = new Customer
+                {
+                    CreateDate = A.CreateDate,
+                    CreateUser = A.CreateUser,
+                    UpdateDate = A.UpdateDate,
+                    UpdateUser = A.UpdateUser,
+                    Code = A.Code,
+                    Name = A.Name,
+                    VkNo = A.VkNo,
+                    Email = A.Email,
+                    Country = A.Country,
+                    Address = A.Address
+                };
 
-            // Eklenen son kaydın UserTableId değerini almak için:
-            var lastRecord = _context.Customers.OrderByDescending(o => o.UserTableId).FirstOrDefault(o => o.CreateUser == A.CreateUser);
-            int userTableId = lastRecord.UserTableId;
 
-            return Json(userTableId.ToString());
+                _context.Customers.Add(Customer);
+                _context.SaveChanges();
+
+                // Eklenen son kaydın UserTableId değerini almak için:
+                var lastRecord = _context.Customers.OrderByDescending(o => o.UserTableId).FirstOrDefault(o => o.CreateUser == A.CreateUser);
+                int userTableId = lastRecord.UserTableId;
+
+                return Json(userTableId.ToString());
+            }
+            return Json("");
 
         }
 
