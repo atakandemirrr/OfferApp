@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Projelerim\\OfferApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\wwwroot\\appjs\\user.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:wwwroot\\appjs\\user.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\views\\user\\subpages\\_createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\user\\subpages\\_createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\views\\offer\\offerlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\offer\\offerlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\views\\user\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\user\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\views\\product\\productlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\product\\productlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,79 +35,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Projelerim\\OfferApp\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAGsAAACNAAAA",
+              "Title": "OfferList.cshtml",
+              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Views\\Offer\\OfferList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Offer\\OfferList.cshtml",
+              "ToolTip": "C:\\Projelerim\\OfferApp\\Views\\Offer\\OfferList.cshtml",
+              "RelativeToolTip": "Views\\Offer\\OfferList.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-13T12:39:45.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserList.cshtml",
-              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Views\\User\\UserList.cshtml",
-              "RelativeDocumentMoniker": "Views\\User\\UserList.cshtml",
-              "ToolTip": "C:\\Projelerim\\OfferApp\\Views\\User\\UserList.cshtml",
-              "RelativeToolTip": "Views\\User\\UserList.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB4AAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-13T11:11:38.749Z",
+              "WhenOpened": "2024-05-13T14:20:48.906Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Projelerim\\OfferApp\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAkwDYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T11:11:10.899Z",
+              "Title": "UserList.cshtml",
+              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Views\\User\\UserList.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\UserList.cshtml",
+              "ToolTip": "C:\\Projelerim\\OfferApp\\Views\\User\\UserList.cshtml",
+              "RelativeToolTip": "Views\\User\\UserList.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-13T14:19:29.457Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "user.js",
-              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\wwwroot\\AppJs\\user.js",
-              "RelativeDocumentMoniker": "wwwroot\\AppJs\\user.js",
-              "ToolTip": "C:\\Projelerim\\OfferApp\\wwwroot\\AppJs\\user.js",
-              "RelativeToolTip": "wwwroot\\AppJs\\user.js",
-              "ViewState": "AQIAADwAAAAAAAAAAAAIwFwAAACQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-05-13T11:23:30.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_CreateUser.cshtml",
-              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Views\\User\\Subpages\\_CreateUser.cshtml",
-              "RelativeDocumentMoniker": "Views\\User\\Subpages\\_CreateUser.cshtml",
-              "ToolTip": "C:\\Projelerim\\OfferApp\\Views\\User\\Subpages\\_CreateUser.cshtml",
-              "RelativeToolTip": "Views\\User\\Subpages\\_CreateUser.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACoAAAB9AAAA",
+              "Title": "ProductList.cshtml",
+              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Views\\Product\\ProductList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\ProductList.cshtml",
+              "ToolTip": "C:\\Projelerim\\OfferApp\\Views\\Product\\ProductList.cshtml",
+              "RelativeToolTip": "Views\\Product\\ProductList.cshtml",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAABIAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-13T11:15:38.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Projelerim\\OfferApp\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "Controllers\\CustomerController.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAwFcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T11:22:00.609Z",
+              "WhenOpened": "2024-05-13T14:16:40.24Z",
               "EditorCaption": ""
             }
           ]

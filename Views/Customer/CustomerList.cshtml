@@ -1,4 +1,3 @@
-
 @{
     ViewData["Title"] = "Müşteriler";
 
@@ -19,40 +18,43 @@
                     @* <a class="btn btn-primary" id="btnCreateCustomer" ><span>Müşteriler Oluştur</span></a> </div> *@
                     <a class="btn btn-primary" id="btnOpenModal" data-url="/Customer/CreateCustomer" data-zindex="1"><span>Müşteriler Oluştur</span></a>
                 </div>
+                <div class="card-body pb-0">
 
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Kodu</th>
-                                <th>Unvanı</th>
-                                <th>VkNo</th>
-                                <th>Email</th>
-                                <th>Ükle</th>
-                                <th>Adresi</th>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Kodu</th>
+                                    <th>Unvanı</th>
+                                    <th>VkNo</th>
+                                    <th>Email</th>
+                                    <th>Ükle</th>
+                                    <th>Adresi</th>
+                                    <th></th>
 
-                            </tr>
-                        </thead>
-                        <tbody id="CustomerTable">
-                            @*   @foreach (var Customer in Model)
-                            {
-                            <tr>
+                                </tr>
+                            </thead>
+                            <tbody id="CustomerTable">
+                                @*   @foreach (var Customer in Model)
+                                {
+                                <tr>
 
-                            <td>@Customer.Code</td>
-                            <td>@Customer.Name</td>
-                            <td class="font-success">@Customer.VkNo</td>
-                            <td>@Customer.Email</td>
-                            <td>@Customer.Country</td>
-                            <td>@Customer.Address</td>
-                            <td>
-                            <a id="editCustomer" data-userTableId="@Customer.UserTableId" href="#"><li data-feather="edit"></li></a>
-                            <td>
-                            </tr>
-                            } *@
-                        </tbody>
-                    </table>
+                                <td>@Customer.Code</td>
+                                <td>@Customer.Name</td>
+                                <td class="font-success">@Customer.VkNo</td>
+                                <td>@Customer.Email</td>
+                                <td>@Customer.Country</td>
+                                <td>@Customer.Address</td>
+                                <td>
+                                <a id="editCustomer" data-userTableId="@Customer.UserTableId" href="#"><li data-feather="edit"></li></a>
+                                <td>
+                                </tr>
+                                } *@
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
-
             </div>
         </div>
     </div>
