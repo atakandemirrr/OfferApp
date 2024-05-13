@@ -2,7 +2,7 @@
 
 namespace OfferApp.ViewModels
 {
-    public class VMProduct
+    public class VMOffer
     {
       public Offer Offer { get; set; } = new Offer();
 

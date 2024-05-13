@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Kullanıcılar";
+
+}
+@section Scripts {
+    <script src="/AppJs/user.js"></script>
+}
+<div class="container-fluid list-products">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h5>Kullanıcılar</h5>
+                </div>
+                <div class="card-header pb-0 text-right">
+                    <a class="btn btn-primary" id="btnOpenModal" data-url="/User/CreateUser" data-zindex="1"><span>Kullanıcı Oluştur</span></a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Kullanıcı Id</th>
+                                <th>Adı</th>
+                                <th>Soyadı</th>
+                                <th>Mail Adresi</th>
+                                <th>Şifre</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="UserTable">
+       
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ModalCreateUser" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+</div>
+

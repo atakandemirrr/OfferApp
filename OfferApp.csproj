@@ -9,6 +9,7 @@
   <ItemGroup>
     <Content Remove="wwwroot\AppJs\offer.js" />
     <Content Remove="wwwroot\AppJs\product.js" />
+    <Content Remove="wwwroot\AppJs\user.js" />
     <Content Remove="wwwroot\GenericAjax.js" />
   </ItemGroup>
 
@@ -17,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\AppJs\user.js" />
     <None Include="wwwroot\AppJs\offer.js" />
     <None Include="wwwroot\AppJs\product.js" />
     <None Include="wwwroot\AppJs\customer.js" />

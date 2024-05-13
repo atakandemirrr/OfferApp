@@ -1,6 +1,4 @@
 
-
-
 ///modal açma iþlemleri
 var Modal1 = $('#MCreateCustomer');
 $(document).on('click', '#btnCreateCustomer', async function () {
