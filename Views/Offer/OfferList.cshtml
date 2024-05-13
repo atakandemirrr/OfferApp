@@ -13,7 +13,7 @@
                     <h5>Teklifler</h5>
                 </div>
                 <div class="card-header pb-0 text-right">
-                    <a class="btn btn-primary" id="btnOpenModal" data-url="/Product/CreateProduct" data-zindex="1"><span>Teklif Oluştur</span></a>
+                    <a class="btn btn-primary" id="btnOpenModal" data-url="/Offer/CreateOffer" data-zindex="1"><span>Teklif Oluştur</span></a>
                 </div>
                 <div class="card-body pb-0 text-right">
                 <div class="table-responsive">
@@ -30,22 +30,7 @@
                             </tr>
                         </thead>
                         <tbody id="OfferTable">
-                            @*      @foreach (var Product in Model)
-                            {
-                            <tr>
-
-                            <td>@Product.Code</td>
-                            <td>@Product.Name</td>
-                            <td class="font-success">@Product.Price</td>
-                            <td>@Product.Piece</td>
-
-                            <td>
-                            <a id="editProduct" data-userTableId="@Product.UserTableId" href="#"><li data-feather="edit"></li></a>
-                            <td>
-                            </tr>
-                            } *@
-
-
+                   
                         </tbody>
                     </table>
 

@@ -1,12 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OfferApp.Models;
 
 namespace OfferApp.Controllers
 {
     public class OfferController : Controller
     {
-        public IActionResult OfferList()
+       public readonly DataContext _context;
+
+        public OfferController(DataContext context)
         {
+            _context = context;
+        }
+
+        [HttpGet]
+        [Route("Offer/OfferList")]
+        [Route("Offer/OfferList/{O}")]
+        public IActionResult OfferList(int O = 0)
+        {
+
+            var OfferList = _context.Offers.ToList();
+            if (O == 1)
+                return Json(OfferList);
             return View();
+        }
+        [HttpGet]
+        [Route("Offer/CreateOffer")]
+        [Route("Offer/CreateOffer/{OfferID}")]
+        public PartialViewResult CreateOffer(int OfferID = 0)
+        {
+            ViewModels.VMOffer model = new ViewModels.VMOffer();
+            if (OfferID != 0)
+                model.Offer = _context.Offers.Where(x => x.UserTableId == OfferID).FirstOrDefault();
+
+
+            return PartialView("Subpages/_CreateOffer", model);
+
         }
     }
 }
