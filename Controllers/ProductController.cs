@@ -20,7 +20,7 @@ namespace OfferApp.Controllers
             var ProductList = _context.Products.ToList();
             if(J == 1)
                 return Json(ProductList);
-            return View(ProductList);
+            return View();
         }
 
         [HttpGet]

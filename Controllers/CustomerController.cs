@@ -24,7 +24,7 @@ namespace OfferApp.Controllers
             var CustomerList = _context.Customers.ToList();
             if (C == 1)
                 return Json(CustomerList);
-            return View(CustomerList);
+            return View();
         }
 
 

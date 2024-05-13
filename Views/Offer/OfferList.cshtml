@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Teklifler";
+
+}
+@section Scripts {
+    <script src="/AppJs/offer.js"></script>
+}
+<div class="container-fluid list-products">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h5>Teklifler</h5>
+                </div>
+                <div class="card-header pb-0 text-right">
+                    <a class="btn btn-primary" id="btnOpenModal" data-url="/Product/CreateProduct" data-zindex="1"><span>Teklif Oluştur</span></a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Müşteri</th>
+                                <th>Teklif Seri-No</th>
+                                <th>Teklif Tarihi</th>
+                                <th>Teslim Tarihi</th>
+                                <th>Toplam Tutar</th>                              
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="OfferTable">
+                            @*      @foreach (var Product in Model)
+                            {
+                            <tr>
+
+                            <td>@Product.Code</td>
+                            <td>@Product.Name</td>
+                            <td class="font-success">@Product.Price</td>
+                            <td>@Product.Piece</td>
+
+                            <td>
+                            <a id="editProduct" data-userTableId="@Product.UserTableId" href="#"><li data-feather="edit"></li></a>
+                            <td>
+                            </tr>
+                            } *@
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ModalCreateOffer" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+</div>
+
