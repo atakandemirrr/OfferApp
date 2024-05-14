@@ -1,12 +1,9 @@
 var Modal1 = $('#ModalCreateProduct');
+var Modal = $('#ModalUploadProduct');
 
 //sayfadaki modalý açmak için yapýldý ancak global js deki function u kullanýyorum.
-$(document).on('click', '#btnCreateCustomer', async function () {
-
-    Modal1.load("/Product/CreateCustomer", function () {
-
-        Modal1.modal('show');
-    })
+$(document).on('click', '#btnUploadModal', async function () {
+    Modal.modal('show');
 });
 
 ///düzenle butonuna týklayýnca gelir
@@ -22,7 +19,7 @@ $(document).on('click', '#editProduct', async function () {
 
 //modal içerisindeki kaydet butonuna týklayýnca
 $(document).on('click', '#CreateProduct', async function () {
-  
+
     DbIslemleri();
 
 });
@@ -75,8 +72,8 @@ function DbIslemleri() {
             }
             else {
                 $('#ProductTable').empty();
-                FillOutList() 
-            
+                FillOutList()
+
                 Modal1.modal('hide');
             }
         },
@@ -88,8 +85,8 @@ function DbIslemleri() {
 
 ///sayfa açýldýðýnda listeyi oluþtur
 $(document).ready(function () {
-  
-    FillOutList() 
+
+    FillOutList()
 
 });
 
@@ -117,6 +114,95 @@ function FillOutList() {
     });
 
 }
+
+$('#excelFile').change(function (e) {
+    excelDosyaYukle();
+});
+function excelDosyaYukle() {
+    var input = $('#excelFile')[0];
+    if (input.files && input.files[0]) {
+        var file = input.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var data = new Uint8Array(e.target.result);
+            var workbook = XLSX.read(data, { type: 'array' });
+            var sheetName = workbook.SheetNames[0];
+            var sheet = workbook.Sheets[sheetName];
+
+            // Excel tablosundan sadece ilk 4 sütunu al
+            var html = "";
+            var range = XLSX.utils.decode_range(sheet['!ref']);
+            for (var rowNum = range.s.r + 1; rowNum <= range.e.r; rowNum++) {
+                html += "<tr>";
+                for (var colNum = range.s.c; colNum <= Math.min(range.e.c, 3); colNum++) {
+                    var cellAddress = { c: colNum, r: rowNum };
+                    var cellRef = XLSX.utils.encode_cell(cellAddress);
+                    var cell = sheet[cellRef];
+                    var cellValue = cell ? cell.v : '';
+                    html += "<td>" + cellValue + "</td>";
+                }
+                html += "</tr>";
+            }
+
+
+            $('#excelData').html(html);
+        };
+        reader.readAsArrayBuffer(file);
+    } else {
+        alert('Lütfen bir dosya seçin.');
+    }
+}
+
+$(document).on('click', '#upload', async function () {
+    tablodanVeriAl();
+});
+function tablodanVeriAl() {
+    var CreateDate = $("#CreateDate").val();
+    var CreateUser = $("#CreateUser").val();
+    var UpdateDate = $("#CreateDate").val();
+    var UpdateUser = $("#CreateUser").val();
+    var table = document.getElementById("excelData");
+    var rows = table.getElementsByTagName("tr");
+ 
+    if (rows.length != 0) {
+        for (var i = 0; i < rows.length; i++) {
+            var rowData = {};
+            var cells = rows[i].getElementsByTagName("td");
+            rowData["CreateDate"] = CreateDate;
+            rowData["CreateUser"] = CreateUser;
+            rowData["UpdateDate"] = UpdateDate;
+            rowData["UpdateUser"] = UpdateUser;
+            rowData["Code"] = cells[0].innerText;
+            rowData["Name"] = cells[1].innerText;
+            rowData["Price"] = cells[2].innerText;
+            rowData["Piece"] = cells[3].innerText;
+            CreateRow(rowData); 
+         
+
+        }
+        function CreateRow(rowData) {
+            $.ajax({
+                type: "POST",
+                url: "/Product/UploadProduct",
+                dataType: 'json',
+                data: rowData,
+                success: function (response) {
+
+                    //$('#ProductTable').empty();
+                    //FillOutList()
+
+                    //Modal.modal('hide');
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log("Hata oluþtu: " + errorThrown);
+                }
+            });
+        }
+    }
+
+}
+
 
 
 

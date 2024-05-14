@@ -10,12 +10,18 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header pb-0">
-                    <h5>Ürünler</h5>
+                    <h5>Ürünler</h5>                 
                 </div>
-                <div class="card-header pb-0 text-right">
-                    <a class="btn btn-primary" id="btnOpenModal" data-url="/Product/CreateProduct" data-zindex="1"><span>Ürün Oluştur</span></a>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card-body pb-0 text-right">
+                        <a class="btn btn-primary" id="btnOpenModal" data-url="/Product/CreateProduct" data-zindex="1"><span>Ürün Oluştur</span></a>
+                    </div>
+                    </div>
+                    <div class="col-md-4" ></div>
+                    <div class="card-body pb-0 col-md-4"> <div id="btnUploadModal" class="btn btn-outline-primary ms-2"><i width="16" height="16" data-feather="upload"></i>Excelden Ürün Yükle</div>
                 </div>
-
+                </div>
                 <div class="card-body pb-0 text-right">
                     <div class="table-responsive">
                         <table class="table table-hover">
@@ -59,3 +65,47 @@
 <div id="ModalCreateProduct" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 </div>
 
+<div id="ModalUploadProduct" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myLargeModalLabel">Ürün Yükle</h4>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <input id="CreateDate" type="hidden" value="@DateTime.Today.ToString("yyyy-MM-dd")">
+            <input id="CreateUser" type="hidden" value="@User.Identity.Name">
+            <div class="modal-body">
+                <div class="mb-3"> 
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input id="excelFile" type="file" name="dosya" />
+                        </div>
+                        <div class="col-md-6">
+                           
+                        </div>
+                        <div class="col-md-2">
+                            <button id="upload" class="btn btn-primary" type="submit">Yükle</button>
+                        </div>
+                    </div>
+              
+                             
+                </div>
+     
+                <table class="table table-hover" border="1">
+                    <thead>
+                        <tr>
+                            <th>Kodu</th>
+                            <th>Adı</th>
+                            <th>Fiyat</th>
+                            <th>Adet</th>
+
+                        </tr>
+                    <tbody id="excelData">                          
+                    </tbody>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

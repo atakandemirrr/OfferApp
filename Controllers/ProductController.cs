@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OfferApp.Models;
+using OfferApp.ViewModels;
 
 namespace OfferApp.Controllers
 {
@@ -36,6 +37,32 @@ namespace OfferApp.Controllers
             return PartialView("Subpages/_CreateProduct", model);
          
         }
+
+
+        [HttpPost]
+         public IActionResult UploadProduct(Product A)
+        {
+
+            var Product = new Product
+            {
+                CreateDate = A.CreateDate,
+                CreateUser = A.CreateUser,
+                UpdateDate = A.UpdateDate,
+                UpdateUser = A.UpdateUser,
+                Code = A.Code,
+                Name = A.Name,
+                Price = A.Price,
+                Piece = A.Piece
+            };
+
+
+            _context.Products.Add(Product);
+            _context.SaveChanges();
+
+            return Json("");
+        }
+
+
 
         [HttpPost]
         public JsonResult CreateProduct(Product A)

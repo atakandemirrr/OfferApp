@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projelerim\\OfferApp\\OfferApp.csproj": {}
+    "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\OfferApp.csproj": {}
   },
   "projects": {
-    "C:\\Projelerim\\OfferApp\\OfferApp.csproj": {
+    "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\OfferApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projelerim\\OfferApp\\OfferApp.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\OfferApp.csproj",
         "projectName": "OfferApp",
-        "projectPath": "C:\\Projelerim\\OfferApp\\OfferApp.csproj",
-        "packagesPath": "C:\\Users\\ataka\\.nuget\\packages\\",
-        "outputPath": "C:\\Projelerim\\OfferApp\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\OfferApp.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ataka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.4, )"
