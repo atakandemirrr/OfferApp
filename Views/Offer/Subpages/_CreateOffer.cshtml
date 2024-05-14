@@ -1,15 +1,15 @@
 @model OfferApp.ViewModels.VMOffer
 
+
 @section Scripts {
     <script src="/AppJs/offer.js"></script>
-
-
 }
 
-<div class="modal-dialog">
+
+<div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title" id="myLargeModalLabel">Ürün Bilgileri</h4>
+            <h4 class="modal-title" id="myLargeModalLabel">Teklif Bilgileri</h4>
             <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         @Html.HiddenFor(x => x.Offer.UserTableId, new { @id = "UserTableID" })
@@ -19,110 +19,112 @@
         <input id="CreateDate" type="hidden" value="@DateTime.Today.ToString("yyyy-MM-dd")">
         <input id="CreateUser" type="hidden" value="@User.Identity.Name">
         <div class="modal-body">
-            <div class="container-fluid list-products">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-header pb-0">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h5>Sipariş Oluştur</h5>
-                                    </div>
-                                    <div class="col-md-4">
-                                    </div>
-                                    <div class="col-md-4 d-flex justify-content-end">
-                                        <button id="onayGonderme" readonly data-statu="1" class="btn btn-primary">Onaya Gönder</button>
-                                    </div>
-                                </div>
+
+            <div class="card">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Teklif Seri</p>
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-end">
+                            <button id="onayGonderme" readonly data-statu="1" class="btn btn-primary">Onaya Gönder</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-header pb-0 text-right">
+                    <div class="mb-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="col-form-label">Müşteri</label>
+                                <select class="form-control form-control-primary-fill btn-square" name="select">
+                                    <option value="opt1">Seçiniz...</option>
+                                  
+                                </select>
                             </div>
-                            <div class="card-header pb-0 text-right">
-                                <div class="mb-4">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                        </div>
-                                        <div class="col-md-4">
-                                        </div>
-                                        <div class="col-md-5">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-4">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="col-sm-6">
-                                                <label class="col-form-label text-end pt-0">Sipariş Tarihi</label>
-                                                <div class="input-group">
-                                                    <input id="SipTrh" class="datepicker-here form-control digits" type="datetime" data-language="tr">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-1">
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="col-sm-6 xs-mt-period">
-                                                <label class="col-form-label text-end pt-0">Teslim Tarihi</label>
-                                                <div class="input-group">
-                                                    <input id="TesTrh" class="datepicker-here form-control digits" type="datetime" data-language="tr">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-4">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="mb-4 ui-draggable-handle" style="position: static;">
-                                                <label for="formcontrol-select1">Ürün Seç</label>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-1">
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label>Birim Fiyat</label> <input id="stockPrice" readonly class="form-control digits" disabled="disabled" type="number">
-                                        </div>
-                                        <div class="col-md-1">
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label>Adet</label>
-                                            <input id="quantity" class="form-control digits" type="number">
-                                        </div>
-                                        <div class="col-md-1">
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label>Tutar</label><input id="total" class="form-control digits" disabled="disabled" type="number">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-10">
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <button id="ekle" readonly class="btn btn-primary">Ekle</button>
-                                    </div>
-                                </div>
+                            <div class="col-md-4">
                             </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Ürün</th>
-                                            <th>Sipariş Adeti</th>
-                                            <th>Birim</th>
-                                            <th>Toplam</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody id="SipTable">
-                                    </tbody>
-                                </table>
+                            <div class="col-md-5">
                             </div>
                         </div>
                     </div>
+                    <div class="mb-4">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="col-sm-6">
+                                    <label class="col-form-label text-end pt-0">Sipariş Tarihi</label>
+                                    <div class="form-row">
+                                    <div class="col-md-12 mb-2">
+                                        <input class="datepicker-here form-control digits" type="text" data-language="en" data-multiple-dates-separator=", " data-position="top left" placeholder="top left">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-3">
+                                <div class="col-sm-6 xs-mt-period">
+                                    <label class="col-form-label text-end pt-0">Teslim Tarihi</label>
+                                    <div class="input-group">
+                                        <input id="TesTrh" class="datepicker-here form-control digits" type="datetime" data-language="tr">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="mb-4 ui-draggable-handle" style="position: static;">
+                                    <label for="formcontrol-select1">Ürün Seç</label>
+
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2">
+                                <label>Birim Fiyat</label> <input id="stockPrice" readonly class="form-control digits" disabled="disabled" type="number">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2">
+                                <label>Adet</label>
+                                <input id="quantity" class="form-control digits" type="number">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-2">
+                                <label>Tutar</label><input id="total" class="form-control digits" disabled="disabled" type="number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-10">
+                        </div>
+
+                        <div class="col-md-2">
+                            <button id="ekle" readonly class="btn btn-primary">Ekle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Ürün</th>
+                                <th>Sipariş Adeti</th>
+                                <th>Birim</th>
+                                <th>Toplam</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="SipTable">
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
