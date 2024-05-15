@@ -23,7 +23,7 @@ namespace OfferApp.Controllers
         {
 
             var ProductList = _context.Products.ToList();
-            if(J == 1)
+            if (J == 1)
                 return Json(ProductList);
             return View();
         }
@@ -39,14 +39,14 @@ namespace OfferApp.Controllers
 
 
             return PartialView("Subpages/_CreateProduct", model);
-         
+
         }
 
         [HttpGet]
         [Route("Product/UploadProduct")]
-           public PartialViewResult UploadProduct()
+        public PartialViewResult UploadProduct()
         {
-           
+
             return PartialView("Subpages/_UploadProduct");
 
         }
@@ -55,27 +55,27 @@ namespace OfferApp.Controllers
         [HttpPost]
         public IActionResult UploadProduct(string products)
         {
+            var ProductList = _context.Products.ToList();
+            List<Product> pro = JsonConvert.DeserializeObject<List<Product>>(products);
+            if (pro.Count > 0)
+            {
+                foreach (var P in pro)
+                {
+                    var TableId = _context.Products.Where(o => o.Code == P.Code).Select(o => o.UserTableId).ToList();
+                    if (TableId.Count == 0)
+                    {
+                        _context.Products.Add(P);
+                        _context.SaveChanges();
+                    }
 
-            //var Product = new Product
-            //{
-            //    CreateDate = A.CreateDate,
-            //    CreateUser = A.CreateUser,
-            //    UpdateDate = A.UpdateDate,
-            //    UpdateUser = A.UpdateUser,
-            //    Code = A.Code,
-            //    Name = A.Name,
-            //    Price = A.Price,
-            //    Piece = A.Piece
-            //};
+                }
+                return Json("1");
+            }
+            else
+            {
+                return Json(new { success = false });
+            }
 
-
-            //_context.Products.Add(Product);
-
-           List<Product> pro= JsonConvert.DeserializeObject<List<Product>>(products);
-
-            _context.SaveChanges();
-
-            return Json("");
         }
 
 
@@ -96,7 +96,7 @@ namespace OfferApp.Controllers
                         P.Name = A.Name;
                         P.Price = A.Price;
                         P.Piece = A.Piece;
-                       
+
 
                     }
                     _context.SaveChanges();
@@ -105,28 +105,29 @@ namespace OfferApp.Controllers
                 }
 
             }
-            else { 
-            var Product = new Product
+            else
             {
-                CreateDate = A.CreateDate,
-                CreateUser = A.CreateUser,
-                UpdateDate = A.UpdateDate,
-                UpdateUser = A.UpdateUser,
-                Code = A.Code,
-                Name = A.Name,
-                Price = A.Price,
-                Piece = A.Piece
-            };
+                var Product = new Product
+                {
+                    CreateDate = A.CreateDate,
+                    CreateUser = A.CreateUser,
+                    UpdateDate = A.UpdateDate,
+                    UpdateUser = A.UpdateUser,
+                    Code = A.Code,
+                    Name = A.Name,
+                    Price = A.Price,
+                    Piece = A.Piece
+                };
 
 
-            _context.Products.Add(Product);
-            _context.SaveChanges();
+                _context.Products.Add(Product);
+                _context.SaveChanges();
 
-            // Eklenen son kaydın UserTableId değerini almak için:
-            var lastRecord = _context.Products.OrderByDescending(o => o.UserTableId).FirstOrDefault(o => o.CreateUser == A.CreateUser);
-            int userTableId = lastRecord.UserTableId;
+                // Eklenen son kaydın UserTableId değerini almak için:
+                var lastRecord = _context.Products.OrderByDescending(o => o.UserTableId).FirstOrDefault(o => o.CreateUser == A.CreateUser);
+                int userTableId = lastRecord.UserTableId;
 
-            return Json(userTableId.ToString());
+                return Json(userTableId.ToString());
             }
             return Json("");
 

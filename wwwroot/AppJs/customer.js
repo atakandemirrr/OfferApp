@@ -1,11 +1,13 @@
 
 ///modal açma iþlemleri
 var Modal1 = $('#MCreateCustomer');
-$(document).on('click', '#btnCreateCustomer', async function () {
+var Modal = $('#ModalUploadCustomer');
 
-    Modal1.load("/Customer/CreateCustomer", function () {
+$(document).on('click', '#btnUploadModal', async function () {
 
-        Modal1.modal('show');
+    Modal.load("/Customer/UploadCustomer", function () {
+
+        Modal.modal('show');
     })
 });
 
@@ -21,7 +23,7 @@ $(document).on('click', '#editCustomer', async function () {
 
 ///db iþlemleri 
 $(document).on('click', '#CreateCustomer', async function () {
-     DbIslemleri();
+    DbIslemleri();
 
 });
 
@@ -82,7 +84,7 @@ function DbIslemleri() {
                 Modal1.modal('hide');
             } else {
                 $('#CustomerTable').empty();
-                FillOutList()
+                FillOutList();
 
                 Modal1.modal('hide');
             }
@@ -98,7 +100,7 @@ function DbIslemleri() {
 ///sayfa açýldýðýnda listeyi oluþtur
 $(document).ready(function () {
 
-    FillOutList()
+    FillOutList();
 
 });
 
@@ -124,5 +126,102 @@ function FillOutList() {
         }
 
     });
+
+}
+
+
+//excelden yükleme yap sayfaya
+$(document).on('change', '#excelFile', async function () {
+    excelDosyaYukle();
+});
+function excelDosyaYukle() {
+    var input = $('#excelFile')[0];
+    if (input.files && input.files[0]) {
+        var file = input.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var data = new Uint8Array(e.target.result);
+            var workbook = XLSX.read(data, { type: 'array' });
+            var sheetName = workbook.SheetNames[0];
+            var sheet = workbook.Sheets[sheetName];
+
+            // Excel tablosundan sadece ilk 4 sütunu al
+            var html = "";
+            var range = XLSX.utils.decode_range(sheet['!ref']);
+            for (var rowNum = range.s.r + 1; rowNum <= range.e.r; rowNum++) {
+                html += "<tr>";
+                for (var colNum = range.s.c; colNum <= Math.min(range.e.c, 5); colNum++) {
+                    var cellAddress = { c: colNum, r: rowNum };
+                    var cellRef = XLSX.utils.encode_cell(cellAddress);
+                    var cell = sheet[cellRef];
+                    var cellValue = cell ? cell.v : '';
+                    html += "<td>" + cellValue + "</td>";
+                }
+                html += "</tr>";
+            }
+
+
+            $('#excelData').html(html);
+        };
+        reader.readAsArrayBuffer(file);
+    } else {
+        alert('Lütfen bir dosya seçin.');
+    }
+}
+
+///TABLODAN AL VERÝTABANINA KAYDET
+$(document).on('click', '#upload', async function () {
+    tablodanVeriAl();
+});
+function tablodanVeriAl() {
+    var CreateDate = $("#CreateDate").val();
+    var CreateUser = $("#CreateUser").val();
+    var UpdateDate = $("#CreateDate").val();
+    var UpdateUser = $("#CreateUser").val();
+    var table = document.getElementById("excelData");
+    var rows = table.getElementsByTagName("tr");
+    var data = [];
+    if (rows.length != 0) {
+        for (var i = 0; i < rows.length; i++) {
+            var rowData = {};
+            var cells = rows[i].getElementsByTagName("td");
+            rowData["CreateDate"] = CreateDate;
+            rowData["CreateUser"] = CreateUser;
+            rowData["UpdateDate"] = UpdateDate;
+            rowData["UpdateUser"] = UpdateUser;
+            rowData["Code"] = cells[0].innerText;
+            rowData["Name"] = cells[1].innerText;
+            rowData["VkNo"] = cells[2].innerText;
+            rowData["Email"] = cells[3].innerText;
+            rowData["Country"] = cells[4].innerText;
+            rowData["Address"] = cells[5].innerText;
+            /*  CreateRow(rowData);   */
+            if (rowData["Code"] != "") {
+                data.push(rowData);
+            }
+
+        }
+
+        var jsonData = JSON.stringify(data);
+
+        $.ajax({
+            type: "POST",
+            url: "/Customer/UploadCustomer",
+            dataType: 'json',
+            data: { customers: jsonData },
+            success: function (response) {
+                var sonuc = response;
+                if (response == 1) {
+                    $('#CustomerTable').empty();
+                    FillOutList();
+                    Modal.modal('hide');
+                }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.log("Hata oluþtu: " + errorThrown);
+            }
+        });
+
+    }
 
 }

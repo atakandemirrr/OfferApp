@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using OfferApp.Models;
 using System.Diagnostics.Metrics;
 using System.Net;
@@ -101,7 +102,40 @@ namespace OfferApp.Controllers
             return PartialView("Subpages/_CreateCustomer", model);
         }
 
+        [HttpGet]
+        [Route("Customer/UploadCustomer")]
+        public PartialViewResult UploadCustomer()
+        {
 
+            return PartialView("Subpages/_UploadCustomer");
+
+        }
+
+        [HttpPost]
+        public IActionResult UploadCustomer(string customers)
+        {
+            var CustomerList = _context.Customers.ToList();
+            List<Customer> cus = JsonConvert.DeserializeObject<List<Customer>>(customers);
+            if (cus.Count > 0)
+            {
+                foreach (var P in cus)
+                {
+                    var TableId = _context.Customers.Where(o => o.Code == P.Code).Select(o => o.UserTableId).ToList();
+                    if (TableId.Count == 0)
+                    {
+                        _context.Customers.Add(P);
+                        _context.SaveChanges();
+                    }
+
+                }
+                return Json("1");
+            }
+            else
+            {
+                return Json(new { success = false });
+            }
+
+        }
 
 
     }

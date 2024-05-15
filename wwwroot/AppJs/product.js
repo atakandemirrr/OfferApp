@@ -3,7 +3,10 @@ var Modal = $('#ModalUploadProduct');
 
 //sayfadaki modalý açmak için yapýldý ancak global js deki function u kullanýyorum.
 $(document).on('click', '#btnUploadModal', async function () {
-    Modal.modal('show');
+    Modal.load("/Product/UploadProduct/", function () {
+
+        Modal.modal('show');
+    })
 });
 
 ///düzenle butonuna týklayýnca gelir
@@ -90,7 +93,7 @@ $(document).ready(function () {
 
 });
 
-
+//listeden veri alma
 function FillOutList() {
     var J = 1;
     $.ajax({
@@ -115,7 +118,7 @@ function FillOutList() {
 
 }
 
- 
+//excelden yükleme yap sayfaya
 $(document).on('change', '#excelFile', async function () {
     excelDosyaYukle();
 });
@@ -153,7 +156,7 @@ function excelDosyaYukle() {
         alert('Lütfen bir dosya seçin.');
     }
 }
-
+///TABLODAN AL VERÝTABANINA KAYDET
 $(document).on('click', '#upload', async function () {
     tablodanVeriAl();
 });
@@ -178,30 +181,32 @@ function tablodanVeriAl() {
             rowData["Price"] = cells[2].innerText;
             rowData["Piece"] = cells[3].innerText;
             /*  CreateRow(rowData);   */
-            data.push(rowData);
+            if (rowData["Code"] != "") { 
+                data.push(rowData);
+            }
 
         }
-        
-         var jsonData = JSON.stringify(data);
+
+        var jsonData = JSON.stringify(data);
 
         $.ajax({
             type: "POST",
             url: "/Product/UploadProduct",
             dataType: 'json',
             data: { products: jsonData },
-                success: function (response) {
-
-                    //$('#ProductTable').empty();
-                    //FillOutList()
-
-                    //Modal.modal('hide');
-
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    console.log("Hata oluþtu: " + errorThrown);
+            success: function (response) {
+                var sonuc = response;
+                if (response == 1) {
+                    $('#ProductTable').empty();
+                    FillOutList()
+                    Modal.modal('hide');
                 }
-            });
-     
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.log("Hata oluþtu: " + errorThrown);
+            }
+        });
+
     }
 
 }
