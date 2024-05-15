@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using OfferApp.Models;
 using OfferApp.ViewModels;
+using System.Net.Http.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace OfferApp.Controllers
 {
@@ -38,25 +42,37 @@ namespace OfferApp.Controllers
          
         }
 
+        [HttpGet]
+        [Route("Product/UploadProduct")]
+           public PartialViewResult UploadProduct()
+        {
+           
+            return PartialView("Subpages/_UploadProduct");
+
+        }
+
 
         [HttpPost]
-         public IActionResult UploadProduct(Product A)
+        public IActionResult UploadProduct(string products)
         {
 
-            var Product = new Product
-            {
-                CreateDate = A.CreateDate,
-                CreateUser = A.CreateUser,
-                UpdateDate = A.UpdateDate,
-                UpdateUser = A.UpdateUser,
-                Code = A.Code,
-                Name = A.Name,
-                Price = A.Price,
-                Piece = A.Piece
-            };
+            //var Product = new Product
+            //{
+            //    CreateDate = A.CreateDate,
+            //    CreateUser = A.CreateUser,
+            //    UpdateDate = A.UpdateDate,
+            //    UpdateUser = A.UpdateUser,
+            //    Code = A.Code,
+            //    Name = A.Name,
+            //    Price = A.Price,
+            //    Piece = A.Piece
+            //};
 
 
-            _context.Products.Add(Product);
+            //_context.Products.Add(Product);
+
+           List<Product> pro= JsonConvert.DeserializeObject<List<Product>>(products);
+
             _context.SaveChanges();
 
             return Json("");

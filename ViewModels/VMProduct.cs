@@ -4,7 +4,7 @@ namespace OfferApp.ViewModels
 {
     public class VMProduct
     {
-      public Product Product { get; set; } = new Product();
+      public Product Product { get; set; } = new Product();    
 
     }
 }

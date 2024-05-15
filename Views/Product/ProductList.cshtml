@@ -19,7 +19,8 @@
                     </div>
                     </div>
                     <div class="col-md-4" ></div>
-                    <div class="card-body pb-0 col-md-4"> <div id="btnUploadModal" class="btn btn-outline-primary ms-2"><i width="16" height="16" data-feather="upload"></i>Excelden Ürün Yükle</div>
+                    <div class="card-body pb-0 col-md-4">
+                        <div id="btnOpenModal" data-url="/Product/UploadProduct" data-zindex="1" class="btn btn-outline-primary ms-2"><i width="16" height="16" data-feather="upload"></i>Excelden Ürün Yükle</div>
                 </div>
                 </div>
                 <div class="card-body pb-0 text-right">
@@ -66,46 +67,5 @@
 </div>
 
 <div id="ModalUploadProduct" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myLargeModalLabel">Ürün Yükle</h4>
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <input id="CreateDate" type="hidden" value="@DateTime.Today.ToString("yyyy-MM-dd")">
-            <input id="CreateUser" type="hidden" value="@User.Identity.Name">
-            <div class="modal-body">
-                <div class="mb-3"> 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <input id="excelFile" type="file" name="dosya" />
-                        </div>
-                        <div class="col-md-6">
-                           
-                        </div>
-                        <div class="col-md-2">
-                            <button id="upload" class="btn btn-primary" type="submit">Yükle</button>
-                        </div>
-                    </div>
-              
-                             
-                </div>
-     
-                <table class="table table-hover" border="1">
-                    <thead>
-                        <tr>
-                            <th>Kodu</th>
-                            <th>Adı</th>
-                            <th>Fiyat</th>
-                            <th>Adet</th>
-
-                        </tr>
-                    <tbody id="excelData">                          
-                    </tbody>
-                    </thead>
-                </table>
-            </div>
-        </div>
-    </div>
+    
 </div>

@@ -358,7 +358,8 @@ async function ModalOpen(button, callback) {
         case "1":
             await Modal1.load(url, async function () {
                 await Modal1.modal('show');
-                TimeCreator();
+                $(".datepicker-here").datepicker();
+                //TimeCreator();
                 if (callback) {
                     callback();
                 }
@@ -368,7 +369,7 @@ async function ModalOpen(button, callback) {
         case "2":
             await Modal2.load(url, async function () {
                 await Modal2.modal('show');
-                TimeCreator();
+                //TimeCreator();
                 if (callback) {
                     callback();
                 }
@@ -378,7 +379,7 @@ async function ModalOpen(button, callback) {
         case "3":
             await Modal3.load(url, async function () {
                 await Modal3.modal('show');
-                TimeCreator();
+               /* TimeCreator();*/
                 if (callback) {
                     callback();
                 }

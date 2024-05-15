@@ -115,7 +115,8 @@ function FillOutList() {
 
 }
 
-$('#excelFile').change(function (e) {
+ 
+$(document).on('change', '#excelFile', async function () {
     excelDosyaYukle();
 });
 function excelDosyaYukle() {
@@ -163,7 +164,7 @@ function tablodanVeriAl() {
     var UpdateUser = $("#CreateUser").val();
     var table = document.getElementById("excelData");
     var rows = table.getElementsByTagName("tr");
- 
+    var data = [];
     if (rows.length != 0) {
         for (var i = 0; i < rows.length; i++) {
             var rowData = {};
@@ -176,16 +177,18 @@ function tablodanVeriAl() {
             rowData["Name"] = cells[1].innerText;
             rowData["Price"] = cells[2].innerText;
             rowData["Piece"] = cells[3].innerText;
-            CreateRow(rowData); 
-         
+            /*  CreateRow(rowData);   */
+            data.push(rowData);
 
         }
-        function CreateRow(rowData) {
-            $.ajax({
-                type: "POST",
-                url: "/Product/UploadProduct",
-                dataType: 'json',
-                data: rowData,
+        
+         var jsonData = JSON.stringify(data);
+
+        $.ajax({
+            type: "POST",
+            url: "/Product/UploadProduct",
+            dataType: 'json',
+            data: { products: jsonData },
                 success: function (response) {
 
                     //$('#ProductTable').empty();
@@ -198,7 +201,7 @@ function tablodanVeriAl() {
                     console.log("Hata oluþtu: " + errorThrown);
                 }
             });
-        }
+     
     }
 
 }
