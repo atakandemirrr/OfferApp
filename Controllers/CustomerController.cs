@@ -20,11 +20,22 @@ namespace OfferApp.Controllers
         [HttpGet]
         [Route("Customer/CustomerList")]
         [Route("Customer/CustomerList/{C}")]
-        public IActionResult CustomerList(int C)
+        [Route("Customer/CustomerList/{C}/{Cod}")]
+        public IActionResult CustomerList(int C, string? Cod)
         {
             var CustomerList = _context.Customers.ToList();
             if (C == 1)
                 return Json(CustomerList);
+            if (C == 2)
+            {
+                var SelectItems = _context.Customers.Select(customer => new { Code = customer.Code, Name = customer.Name }).ToList();
+                return Json(SelectItems);
+            }
+            if (C == 3)
+            {
+                var customerInformation = _context.Customers.Where(o => o.Code == Cod);
+                return Json(customerInformation);
+            }
             return View();
         }
 

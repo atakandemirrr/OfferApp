@@ -1,4 +1,3 @@
-var Modal1 = $('#ModalCreateOffer');
 
 
 ///sayfa açýldýðýnda listeyi oluþtur
@@ -8,7 +7,7 @@ $(document).ready(function () {
 
 });
 
-
+///liste doldurma
 function FillOutList() {
     var O = 1;
     $.ajax({
@@ -31,4 +30,82 @@ function FillOutList() {
 
     });
 
+}
+
+//teklif oluþturma sayfasýnda müþteri açýlýr kutusu doldur
+
+$(document).ready(function () {
+    // AJAX isteði gönderme müþteriler için müþteri controllera gidiyorum
+    var C = 2;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", '/Customer/CustomerList/' + C + '', true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Sunucudan gelen JSON yanýtýný al
+            var customers = JSON.parse(xhr.responseText);
+
+            // Açýlýr kutuyu doldurma
+            fillDropDown(customers);
+        }
+    };
+    xhr.send();
+});
+
+// Açýlýr kutuyu doldurma fonksiyonu
+function fillDropDown(customers) {
+    var select = $("#customerSelect");
+    // Her bir stok için açýlýr kutuya bir seçenek ekle
+    customers.forEach(function (customers) {
+        select.append("<option value='" + customers.code + "'>" + customers.name + "</option>");
+    });
+}
+
+//müþteri açýlýr kutusu deðiþtiðinde 
+$(document).on('change', '#customerSelect', async function () {
+    var C = 3;
+    var Cod = $("#customerSelect").val();
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", '/Customer/CustomerList/' + C + '/' + Cod + '', true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Sunucudan gelen JSON yanýtýný al
+            var customers = JSON.parse(xhr.responseText);
+
+            // Açýlýr kutuyu doldurma
+            customerInformation(customers);
+        }
+    };
+    xhr.send();
+
+});
+
+function customerInformation(customers) {
+    // customerInformation id'sine sahip div'i seç
+    var customerInformationDiv = document.getElementById("customerInformation");
+
+    // customerInformationDiv içeriðini temizle
+    customerInformationDiv.innerHTML = '';
+
+
+
+    // Yeni bir div oluþtur
+    var newDiv = document.createElement("div");
+
+    // Ýçeriði ayarla
+    customers.forEach(function (customer) {
+        // Yeni bir div oluþtur
+        var newDiv = document.createElement("div");
+
+        // Ýçeriði ayarla
+        newDiv.innerHTML =
+            '<h5 style="border-bottom: 2px solid black;">Musteri Bilgileri</h5>' +
+            '<p style="margin-bottom:2px;">Kodu   :' + customer.code + ' </p>' +
+            '<p style="margin-bottom:2px;">VkNo   :' + customer.vkNo + ' </p>' +
+            '<p style="margin-bottom:2px;">Email  :' + customer.email + ' </p>' +
+            '<p style="margin-bottom:2px;">Ukle   :' + customer.country + ' </p>' +
+            '<p style="margin-bottom:2px;">Adresi :' + customer.address + ' </p>';
+
+        // Yeni oluþturulan div'i customerInformationDiv'e ekle
+        customerInformationDiv.appendChild(newDiv);
+    });
 }

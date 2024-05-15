@@ -24,16 +24,12 @@ namespace OfferApp.Controllers
             return View();
         }
         [HttpGet]
-        [Route("Offer/CreateOffer")]
-        [Route("Offer/CreateOffer/{OfferID}")]
-        public PartialViewResult CreateOffer(int OfferID = 0)
+     
+        public IActionResult CreateOffer()
         {
-            ViewModels.VMOffer model = new ViewModels.VMOffer();
-            if (OfferID != 0)
-                model.Offer = _context.Offers.Where(x => x.UserTableId == OfferID).FirstOrDefault();
+           
 
-
-            return PartialView("Subpages/_CreateOffer", model);
+            return View();
 
         }
     }

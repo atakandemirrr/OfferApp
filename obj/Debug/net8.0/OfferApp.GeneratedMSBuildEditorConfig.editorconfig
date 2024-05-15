@@ -9,83 +9,83 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OfferApp
 build_property.RootNamespace = OfferApp
-build_property.ProjectDir = C:\Projelerim\OfferApp\
+build_property.ProjectDir = C:\Users\user\Desktop\Repostory\OfferApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Projelerim\OfferApp
+build_property.MSBuildProjectDirectory = C:\Users\user\Desktop\Repostory\OfferApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Projelerim/OfferApp/Views/Customer/CustomerList.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Customer/CustomerList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3VzdG9tZXJMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Customer/Subpages/_CreateCustomer.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Customer/Subpages/_CreateCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcU3VicGFnZXNcX0NyZWF0ZUN1c3RvbWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Customer/Subpages/_UploadCustomer.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Customer/Subpages/_UploadCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcU3VicGFnZXNcX1VwbG9hZEN1c3RvbWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Login/LoginProcedures.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Login/LoginProcedures.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5Qcm9jZWR1cmVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Offer/OfferList.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Offer/CreateOffer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcQ3JlYXRlT2ZmZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Offer/OfferList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcT2ZmZXJMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Offer/Subpages/_CreateOffer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcU3VicGFnZXNcX0NyZWF0ZU9mZmVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Projelerim/OfferApp/Views/Panel/PanelPage.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Panel/PanelPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFuZWxcUGFuZWxQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Product/ProductList.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Product/ProductList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0TGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Product/Subpages/_CreateProduct.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Product/Subpages/_CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTdWJwYWdlc1xfQ3JlYXRlUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Product/Subpages/_UploadProduct.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Product/Subpages/_UploadProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTdWJwYWdlc1xfVXBsb2FkUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Shared/Error.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/User/Subpages/_CreateUser.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/User/Subpages/_CreateUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTdWJwYWdlc1xfQ3JlYXRlVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/User/UserList.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/User/UserList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/_ViewImports.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/_ViewStart.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projelerim/OfferApp/Views/Shared/_Layout.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vd4ug8h2qm
 
-[C:/Projelerim/OfferApp/Views/Shared/_LayoutLogin.cshtml]
+[C:/Users/user/Desktop/Repostory/OfferApp/Views/Shared/_LayoutLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-4fatmfdgj5

@@ -281,3 +281,4 @@ C:\Projelerim\OfferApp\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Projelerim\OfferApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Projelerim\OfferApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Projelerim\OfferApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\user\Desktop\Repostory\OfferApp\bin\Debug\net8.0\Newtonsoft.Json.dll

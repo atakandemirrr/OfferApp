@@ -1,0 +1,89 @@
+@model OfferApp.ViewModels.VMOffer
+
+
+
+
+@section Scripts {
+    <script src="/AppJs/offer.js"></script>
+    <script src="~/js/jsgrid/jsgrid.min.js"></script>  
+    <script src="~/js/jsgrid/jsgrid.js"></script>
+}
+
+
+<div class="card">
+    <div class="card-header pb-0">
+        @Html.HiddenFor(x => x.Offer.UserTableId, new { @id = "UserTableID" })
+        @Html.HiddenFor(x => x.Offer.CustomerCode, new { @id = "CustomerCode" })
+        @Html.HiddenFor(x => x.Offer.OfferSeri, new { @id = "OfferSeri" })
+        @Html.HiddenFor(x => x.Offer.OfferSira, new { @id = "OfferSira" })
+        <input id="CreateDate" type="hidden" value="@DateTime.Today.ToString("yyyy-MM-dd")">
+        <input id="CreateUser" type="hidden" value="@User.Identity.Name">
+        <div class="row">
+            <div class="col-md-4">
+                <p>Teklif Seri</p>
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+                <button id="onayGonderme" readonly data-statu="1" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-header pb-0 text-right">
+        <div class="mb-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="col-form-label">Müşteri</label>
+                    <select id="customerSelect" class="js-example-placeholder-multiple col-sm-12">
+                        <option value="">Seçiniz..</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-5">
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="col-sm-6">
+                        <label class="col-form-label text-end pt-0">Sipariş Tarihi</label>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-2">
+                                <input id="TesTrh" class="datepicker-here form-control digits" type="datetime" data-language="tr">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="col-sm-6 xs-mt-period">
+                        <label class="col-form-label text-end pt-0">Teslim Tarihi</label>
+                        <div class="input-group">
+                            <input id="TesTrh" class="datepicker-here form-control digits" type="datetime" data-language="tr">
+                        </div>
+                    </div>
+                </div>
+                <div id="customerInformation" class="col-md-4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header pb-0">
+                <h5>Basic Scenario</h5>
+            </div>
+            <div class="card-body">
+                <div id="basicScenario"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
