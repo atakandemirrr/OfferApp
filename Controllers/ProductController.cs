@@ -18,13 +18,18 @@ namespace OfferApp.Controllers
         }
         [HttpGet]
         [Route("Product/ProductList")]
-        [Route("Product/ProductList/{J}")]
-        public IActionResult ProductList(int J = 0)
+        [Route("Product/ProductList/{P}")]
+        public IActionResult ProductList(int P = 0)
         {
 
             var ProductList = _context.Products.ToList();
-            if (J == 1)
+            if (P == 1)
                 return Json(ProductList);
+            if (P == 2)
+            {
+                var SelectItems = _context.Products.Select(product => new { Code = product.Code, Name = product.Name }).ToList();
+                return Json(SelectItems);
+            }
             return View();
         }
 
