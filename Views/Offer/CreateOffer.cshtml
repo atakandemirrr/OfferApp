@@ -46,37 +46,63 @@
         </div>
         <div class="mb-4">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="col-sm-6">
-                        <label class="col-form-label text-end pt-0">Sipariş Tarihi</label>
-                        <div class="form-row">
-                            <div class="col-md-12 mb-2">
-                                <input id="TesTrh" class="datepicker-here form-control digits" type="datetime" data-language="tr">
-                            </div>
+                <div class="col-md-3">
+
+                    <label class="col-form-label text-end pt-0">Sipariş Tarihi</label>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-2">
+                            <input id="SipTrh" class="datepicker-here form-control digits" type="datetime" data-language="tr">
                         </div>
                     </div>
+
                 </div>
 
-                <div class="col-md-4">
-                    <div class="col-sm-6 xs-mt-period">
-                        <label class="col-form-label text-end pt-0">Teslim Tarihi</label>
-                        <div class="input-group">
-                            <input id="TesTrh" class="datepicker-here form-control digits" type="datetime" data-language="tr">
-                        </div>
+                <div class="col-md-3">
+
+                    <label class="col-form-label text-end pt-0">Teslim Tarihi</label>
+                    <div class="input-group">
+                        <input id="TesTrh" class="datepicker-here form-control digits" type="datetime" data-language="tr">
                     </div>
+
                 </div>
-                <div id="customerInformation" class="col-md-4">
+                <div id="customerInformation" class="col-md-6">
                 </div>
             </div>
         </div>
     </div>
 
     <div class="card-body">
-        <div>
-            <h5>Ürünler</h5>
+        <div class="row">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="mb-4 ui-draggable-handle" style="position: static;">
+                        <label for="formcontrol-select1">Ürün Seç</label>
+                        <select id="productSelect" class="form-control btn-square">
+                            <option value="">Seçiniz..</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <label>Birim Fiyat</label> <input id="stockPrice" readonly class="form-control digits" disabled="disabled" type="number">
+                </div>
+
+                <div class="col-md-2">
+                    <label>Adet</label>
+                    <input id="quantity" class="form-control digits" type="number">
+                </div>
+
+                <div class="col-md-2">
+                    <label>Tutar</label><input id="total" class="form-control digits" disabled="disabled" type="number">
+                </div>
+            </div>
         </div>
-        <div>
-            <div id="jsGrid"></div>
+        <div class="row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+                <button id="ekle" readonly class="btn btn-primary">Ekle</button>
+            </div>
         </div>
     </div>
 </div>
