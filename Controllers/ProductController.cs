@@ -19,7 +19,8 @@ namespace OfferApp.Controllers
         [HttpGet]
         [Route("Product/ProductList")]
         [Route("Product/ProductList/{P}")]
-        public IActionResult ProductList(int P = 0)
+        [Route("Product/ProductList/{P}/{Cod}")]
+        public IActionResult ProductList(int P = 0, string Cod = "")
         {
 
             var ProductList = _context.Products.ToList();
@@ -29,6 +30,14 @@ namespace OfferApp.Controllers
             {
                 var SelectItems = _context.Products.Select(product => new { Code = product.Code, Name = product.Name }).ToList();
                 return Json(SelectItems);
+            }
+            if (P == 3)
+            {
+                var SelectPrice = _context.Products
+                                            .Where(p => p.Code == Cod)
+                                            .Select(product => new { Price = product.Price })
+                                            .FirstOrDefault();
+                return Json(SelectPrice);
             }
             return View();
         }

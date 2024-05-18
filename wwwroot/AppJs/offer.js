@@ -119,7 +119,7 @@ $(document).ready(function () {
         url: '/Product/ProductList/2',
         type: 'GET',
         success: function (response) {
-       
+
             var select = $("#productSelect");
             // Her bir stok için açýlýr kutuya bir seçenek ekle
             response.forEach(function (response) {
@@ -133,3 +133,141 @@ $(document).ready(function () {
     });
 });
 
+
+/*siprariþ formu açýlýr kutudaki deðer deðiþtiðinde*/
+$("#productSelect").change(function () {
+    var stockCode = $(this).val();
+    FiyatGetir(stockCode)
+
+});
+/*stok seçildiðinde fiyat gelen */
+function FiyatGetir(stockCode) {
+    if (stockCode.trim() !== '') {
+        $.ajax({
+            url: '/Product/ProductList/3/' + stockCode + '',
+            type: 'GET',
+            success: function (response) {
+                $("#stockPrice").val(response.price);
+            },
+            error: function (xhr, status, error) {
+                console.error("Bir hata oluþtu: ", error);
+            }
+        });
+
+    } else {
+        // Seçilen deðer boþ ise, fiyat alanýný temizle
+        $("#stockPrice").val('');
+    }
+}
+
+
+/*adet deðiþtiðinde kullanýlan*/
+$("#quantity").change("input", function () {
+    calculateTotal();
+});
+
+function calculateTotal() {
+
+    var quantity = parseFloat($("#quantity").val());
+    var stockPrice = parseFloat($("#stockPrice").val());
+
+    // Eðer adet veya birim fiyat boþsa veya NaN ise, toplam alanýný temizle
+    if (isNaN(quantity) || isNaN(stockPrice)) {
+        $("#total").val('');
+        return;
+    }
+
+    // Toplamý hesapla ve total alanýna yaz
+    var total = quantity * stockPrice;
+    $("#total").val(total.toFixed(2)); // Ýki ondalýk basamakla sýnýrla
+}
+
+
+//ekle butonuna týlayýnca çalýþan iþlemler veritabanýna kayýt iþlemi yapýlýyor.
+$(document).on('click', '#ekle', async function () {
+    EkleIslemleri();
+})
+
+
+function EkleIslemleri() {
+    var OfferDate = $("#OfferDate").val();
+    var DeliveryDate = $("#DeliveryDate").val();
+    var OfferSeri = $("#OfferSeri").val();
+    var OfferSira = $("#OfferSira").val();
+    var CustomerCode = $("#customerSelect").val();
+    var Product = $("#productSelect").val();
+    var ProductName = $("#productSelect").find('option:selected').text();
+    var Price = $("#stockPrice").val();
+    var Piece = $("#quantity").val();
+    var Total = $("#total").val();
+    var CreateDate = $("#CreateDate").val();
+    var UpdateDate = $("#CreateDate").val();
+    var Statu = "0";
+    var CreateUser = $("#CreateUser").val();
+    var UpdateUser = $("#CreateUser").val();
+
+    var data = {
+        CreateDate: CreateDate,
+        CreateUser: CreateUser,
+        UpdateDate: UpdateDate,
+        UpdateUser: UpdateUser,
+        OfferDate: OfferDate,
+        DeliveryDate: DeliveryDate,
+        OfferSeri: OfferSeri,
+        OfferSira: OfferSira,
+        CustomerCode: CustomerCode,
+        Product: Product,
+        Piece: Piece,
+        Price: Price,
+        Total: Total,        
+        Statu: Statu
+        
+
+    };
+    var jsonData = JSON.stringify(data);
+
+    $.ajax({
+        type: "POST",
+        url: "/Offer/CreateOffer",
+        
+        dataType: 'json',
+        data: { offerrow: jsonData },
+        success: function (response) {
+            var UserTableID = response;
+            //tablo satýrlarý oluþturuluyor
+            var tr = '<tr><td>' + ProductName + '</td><td>' + Piece + '</td><td>' + Price + '</td><td>' + Total + '</td><td><button id="silButton" readonly   data-usertableid="' + UserTableID + '" class="badge bg-danger text-white">Sil</button></td></tr>';
+            $("#OfferRowTable").append(tr);
+            //alanlarý temizle
+            $("#productSelect").val("");         
+            $("#stockPrice").val("");
+            $("#total").val("");
+            $("#quantity").val("");
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            console.log("Hata oluþtu: " + errorThrown);
+        }
+    });
+}
+
+
+
+
+//form açýldýðýnda sýra alanýný bul getir - seri sira alanýný yaz
+$(document).ready(function () {
+
+    $.ajax({
+        url: '/Offer/OfferSira',
+        type: 'GET',
+        success: function (response) {
+            $("#OfferSira").val(response);
+            var metin = 'Teklif Seri - Sira : ABC - ' + response + '';
+            const hElement = document.getElementById("serisira");
+            hElement.textContent = metin;
+        
+        },
+        error: function (xhr, status, error) {
+            console.error("Bir hata oluþtu: ", error);
+        }
+    });
+
+})

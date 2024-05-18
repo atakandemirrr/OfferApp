@@ -133,21 +133,27 @@ function excelDosyaYukle() {
             var sheetName = workbook.SheetNames[0];
             var sheet = workbook.Sheets[sheetName];
 
-            // Excel tablosundan sadece ilk 4 sütunu al
+            // Excel tablosundan sadece ilk 4 sütunu al ve boþ satýrlarý atla
             var html = "";
             var range = XLSX.utils.decode_range(sheet['!ref']);
             for (var rowNum = range.s.r + 1; rowNum <= range.e.r; rowNum++) {
-                html += "<tr>";
+                var isRowEmpty = true;
+                var rowHtml = "<tr>";
                 for (var colNum = range.s.c; colNum <= Math.min(range.e.c, 3); colNum++) {
                     var cellAddress = { c: colNum, r: rowNum };
                     var cellRef = XLSX.utils.encode_cell(cellAddress);
                     var cell = sheet[cellRef];
                     var cellValue = cell ? cell.v : '';
-                    html += "<td>" + cellValue + "</td>";
+                    if (cellValue !== '') {
+                        isRowEmpty = false;
+                    }
+                    rowHtml += "<td>" + cellValue + "</td>";
                 }
-                html += "</tr>";
+                rowHtml += "</tr>";
+                if (!isRowEmpty) {
+                    html += rowHtml;
+                }
             }
-
 
             $('#excelData').html(html);
         };
