@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using OfferApp.Models;
 
@@ -19,9 +20,34 @@ namespace OfferApp.Controllers
         public IActionResult OfferList(int O = 0)
         {
 
-            var OfferList = _context.Offers.ToList();
+
             if (O == 1)
-                return Json(OfferList);
+            {
+
+
+                var OfferList = _context.Offers
+        .Include(o => o.Customer) // LEFT JOIN için Include kullanıyoruz
+                                    .GroupBy(o => new
+                                    {
+                                        o.OfferDate,
+                                        o.DeliveryDate,
+                                        SeriSira = o.OfferSeri + " - " + o.OfferSira,
+                                        o.OfferSira,
+                                        o.Customer.Name
+                                    })
+                                    .Select(g => new
+                                    {
+                                        OfferDate = g.Key.OfferDate,
+                                        DeliveryDate = g.Key.DeliveryDate,
+                                        SeriSira = g.Key.SeriSira,
+                                        OfferSira = g.Key.OfferSira,
+                                        Name = g.Key.Name,
+                                        Total = g.Sum(o => o.Total)
+                                    })
+                                    .ToList();
+                                            return Json(OfferList);
+                                        }
+
             return View();
         }
         [HttpGet]
@@ -47,28 +73,39 @@ namespace OfferApp.Controllers
         [HttpPost]
         public IActionResult CreateOffer(string offerrow)
         {
-            
+
             var offer = JsonConvert.DeserializeObject<Offer>(offerrow);
             //List<Offer> offer = JsonConvert.DeserializeObject<List<Offer>>(offerrow);
             if (offer.CustomerCode != "")
             {
-                
 
-                    _context.Offers.Add(offer);
-                    _context.SaveChanges();
-                    var sonEklenen = _context.Offers
-                                            .Where(o => o.OfferSeri == offer.OfferSeri && o.OfferSira == offer.OfferSira && o.CreateUser == offer.CreateUser)
-                                            .OrderByDescending(o => o.UserTableId)
-                                            .Select(o => o.UserTableId)
-                                            .FirstOrDefault();
 
-                    return Json(sonEklenen.ToString());
+                _context.Offers.Add(offer);
+                _context.SaveChanges();
+                var sonEklenen = _context.Offers
+                                        .Where(o => o.OfferSeri == offer.OfferSeri && o.OfferSira == offer.OfferSira && o.CreateUser == offer.CreateUser)
+                                        .OrderByDescending(o => o.UserTableId)
+                                        .Select(o => o.UserTableId)
+                                        .FirstOrDefault();
+
+                return Json(sonEklenen.ToString());
             }
             else
             {
                 return Json(new { success = false });
             }
 
+        }
+
+        [HttpGet]
+        [Route("Offer/EditOffer/{UserTableID}")]
+
+        public JsonResult EditOffer(int UserTableID)
+        {
+            var OfferDatas = _context.Offers.Where(o => o.UserTableId == UserTableID).Select(o => new { o.ProductCode, o.Price, o.Piece, o.Total }).ToList(); ;
+
+
+            return Json(OfferDatas);
         }
 
 

@@ -36,7 +36,7 @@ namespace OfferApp.Migrations
 
                     b.Property<string>("Code")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Country")
                         .IsRequired()
@@ -87,7 +87,7 @@ namespace OfferApp.Migrations
 
                     b.Property<string>("CustomerCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("DeliveryDate")
                         .IsRequired()
@@ -110,9 +110,9 @@ namespace OfferApp.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Product")
+                    b.Property<string>("ProductCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Statu")
                         .HasColumnType("int");
@@ -128,6 +128,10 @@ namespace OfferApp.Migrations
 
                     b.HasKey("UserTableId");
 
+                    b.HasIndex("CustomerCode");
+
+                    b.HasIndex("ProductCode");
+
                     b.ToTable("Offers");
                 });
 
@@ -141,7 +145,7 @@ namespace OfferApp.Migrations
 
                     b.Property<string>("Code")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -216,6 +220,37 @@ namespace OfferApp.Migrations
                     b.HasKey("UserTableId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("OfferApp.Models.Offer", b =>
+                {
+                    b.HasOne("OfferApp.Models.Customer", "Customer")
+                        .WithMany("Offers")
+                        .HasForeignKey("CustomerCode")
+                        .HasPrincipalKey("Code")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OfferApp.Models.Product", "Product")
+                        .WithMany("Offers")
+                        .HasForeignKey("ProductCode")
+                        .HasPrincipalKey("Code")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("OfferApp.Models.Customer", b =>
+                {
+                    b.Navigation("Offers");
+                });
+
+            modelBuilder.Entity("OfferApp.Models.Product", b =>
+                {
+                    b.Navigation("Offers");
                 });
 #pragma warning restore 612, 618
         }

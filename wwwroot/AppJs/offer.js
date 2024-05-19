@@ -19,7 +19,7 @@ function FillOutList() {
                 addRow(Offer);
             });
             function addRow(Offer) {
-                $('#OfferTable').append('<tr><td>' + Offer.customerCode + '</td><td>' + Offer.offerSeri + '</td><td>' + Offer.offerDate + '</td><td>' + Offer.total + '</td><td><a id="editProduct" data-userTableId="' + Product.userTableId + '" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>');
+                $('#OfferTable').append('<tr><td>' + Offer.name + '</td><td>' + Offer.seriSira + '</td><td>' + Offer.offerDate + '</td><td>' + Offer.deliveryDate + '</td><td>' + Offer.total + '</td><td><a id="editProduct" data-userTableId="" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>');
 
             }
         },
@@ -216,12 +216,12 @@ function EkleIslemleri() {
         OfferSeri: OfferSeri,
         OfferSira: OfferSira,
         CustomerCode: CustomerCode,
-        Product: Product,
+        ProductCode: Product,
         Piece: Piece,
         Price: Price,
-        Total: Total,        
+        Total: Total,
         Statu: Statu
-        
+
 
     };
     var jsonData = JSON.stringify(data);
@@ -229,16 +229,16 @@ function EkleIslemleri() {
     $.ajax({
         type: "POST",
         url: "/Offer/CreateOffer",
-        
+
         dataType: 'json',
         data: { offerrow: jsonData },
         success: function (response) {
             var UserTableID = response;
             //tablo satýrlarý oluþturuluyor
-            var tr = '<tr><td>' + ProductName + '</td><td>' + Piece + '</td><td>' + Price + '</td><td>' + Total + '</td><td><button id="silButton" readonly   data-usertableid="' + UserTableID + '" class="badge bg-danger text-white">Sil</button></td></tr>';
+            var tr = '<tr><td>' + ProductName + '</td><td>' + Piece + '</td><td>' + Price + '</td><td>' + Total + '</td><td><button id="silButton" readonly   data-usertableid="' + UserTableID + '" class="badge bg-danger text-white">Sil</button></td><td><td><a id="editOffer" data-userTableIdedit="' + UserTableID + '" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>';
             $("#OfferRowTable").append(tr);
             //alanlarý temizle
-            $("#productSelect").val("");         
+            $("#productSelect").val("");
             $("#stockPrice").val("");
             $("#total").val("");
             $("#quantity").val("");
@@ -263,11 +263,50 @@ $(document).ready(function () {
             var metin = 'Teklif Seri - Sira : ABC - ' + response + '';
             const hElement = document.getElementById("serisira");
             hElement.textContent = metin;
-        
+
         },
         error: function (xhr, status, error) {
             console.error("Bir hata oluþtu: ", error);
         }
     });
 
+})
+
+
+//form açýldýðýnda ekle - güncelle butonlarý ile ilgili iþelmler  
+$(document).ready(function () {
+    btnselection();
+});
+
+function btnselection() {
+
+    var btnscm = $('#BtnSecim').val();
+    var btnArea = $('#btnArea');
+
+    if (btnscm == "0") {
+        btnArea.append('<button style="width: 100%;" id="ekle" class="btn btn-primary" readonly>Ekle</button>');
+    } else {
+        btnArea.append('<button type="hidden" style="width: 100%;" id="update" class="btn btn-primary" readonly>Guncelle</button>');
+    }
+}
+
+//edit butonuna týlayýnca çalýþan iþlemler veritabanýna kayýt iþlemi yapýlýyor.
+$(document).on('click', '#editOffer', async function () {
+    var UserTableID = $(this).attr("data-userTableIdedit");
+
+    $.ajax({
+        type: "GET",
+        url: '/Offer/EditOffer/' + UserTableID + '',
+
+        dataType: 'json',
+        success: function (response) {
+            $("#productSelect").val(response.product);
+            $("#stockPrice").val(response.price);
+            $("#total").val(response.total);
+            $("#quantity").val(response.piece);
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            console.log("Hata oluþtu: " + errorThrown);
+        }
+    });
 })

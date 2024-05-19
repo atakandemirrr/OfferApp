@@ -10,10 +10,13 @@ namespace OfferApp.Models
         public int OfferSira { get; set; }
 
         public string CustomerCode { get; set; }
-        public string Product { get; set; }
+        public string ProductCode { get; set; }
         public int Piece { get; set; }
         public decimal Price { get; set; }
         public decimal Total { get; set; }
         public int Statu { get; set; }/*0 hazırlandı 1 onayda 2 onaylandı 3 rededildi*/
+
+        public Customer Customer { get; set; }
+        public Product Product { get; set; }
     }
 }
