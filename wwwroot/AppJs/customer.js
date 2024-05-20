@@ -1,5 +1,5 @@
-
-///modal açma iþlemleri
+ï»¿
+///modal alma iÅŸlemleri
 var Modal1 = $('#MCreateCustomer');
 var Modal = $('#ModalUploadCustomer');
 
@@ -21,7 +21,7 @@ $(document).on('click', '#editCustomer', async function () {
 
 
 
-///db iþlemleri 
+///db iÅŸlemleri 
 $(document).on('click', '#CreateCustomer', async function () {
     DbIslemleri();
 
@@ -77,7 +77,7 @@ function DbIslemleri() {
         success: function (response) {
 
             if (UserTableID == 0) {
-                //tablo satýrlarý oluþturuluyor
+                //tablo satÄ±rlarÄ± oluÅŸturuluyor
                 var tr = '<tr><td>' + Code + '</td><td>' + Name + '</td><td>' + VkNo + '</td><td>' + Email + '</td><td>' + Country + '</td><td>' + Address + '</td><td><a id="editCustomer" href="/Customer/CreateCustomer/' + UserTableID + '"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td ></tr > ';
 
                 $("#CustomerTable").append(tr);
@@ -91,13 +91,13 @@ function DbIslemleri() {
 
         },
         error: function (xhr, textStatus, errorThrown) {
-            console.log("Hata oluþtu: " + errorThrown);
+            console.log("Hata oluÅŸtu: " + errorThrown);
         }
     });
 }
 
 
-///sayfa açýldýðýnda listeyi oluþtur
+///sayfa aÃ§Ä±ldÄ±ÄŸÄ±nda listeyi oluÅŸtur
 $(document).ready(function () {
 
     FillOutList();
@@ -121,7 +121,7 @@ function FillOutList() {
             }
         },
         error: function (xhr, status, error) {
-            // Ýstek baþarýsýz olduðunda çalýþacak fonksiyon
+            // Ä°stek baÅŸarÄ±sÄ±z olduÄŸunda Ã§alÄ±ÅŸacak fonksiyon
             console.error('Hata:', status, error);
         }
 
@@ -130,7 +130,7 @@ function FillOutList() {
 }
 
 
-//excelden yükleme yap sayfaya
+//excelden yÃ¼kleme yap sayfaya
 $(document).on('change', '#excelFile', async function () {
     excelDosyaYukle();
 });
@@ -145,7 +145,7 @@ function excelDosyaYukle() {
             var sheetName = workbook.SheetNames[0];
             var sheet = workbook.Sheets[sheetName];
 
-            // Excel tablosundan sadece ilk 4 sütunu al
+            // Excel tablosundan sadece ilk 4 sÃ¼tunu al
             var html = "";
             var range = XLSX.utils.decode_range(sheet['!ref']);
             for (var rowNum = range.s.r + 1; rowNum <= range.e.r; rowNum++) {
@@ -172,11 +172,11 @@ function excelDosyaYukle() {
         };
         reader.readAsArrayBuffer(file);
     } else {
-        alert('Lütfen bir dosya seçin.');
+        alert('LÃ¼tfen bir dosya seÃ§in.');
     }
 }
 
-///TABLODAN AL VERÝTABANINA KAYDET
+///TABLODAN AL VERÄ°TABANINA KAYDET
 $(document).on('click', '#upload', async function () {
     tablodanVeriAl();
 });
@@ -225,7 +225,7 @@ function tablodanVeriAl() {
                 }
             },
             error: function (xhr, textStatus, errorThrown) {
-                console.log("Hata oluþtu: " + errorThrown);
+                console.log("Hata oluÅŸtu: " + errorThrown);
             }
         });
 

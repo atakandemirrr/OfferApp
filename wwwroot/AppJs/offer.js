@@ -1,6 +1,6 @@
+ï»¿
 
-
-///sayfa açýldýðýnda listeyi oluþtur
+///sayfa aÃ§Ä±ldÄ±ÄŸÄ±nda listeyi oluÅŸtur
 $(document).ready(function () {
 
     FillOutList()
@@ -24,7 +24,7 @@ function FillOutList() {
             }
         },
         error: function (xhr, status, error) {
-            // Ýstek baþarýsýz olduðunda çalýþacak fonksiyon
+            // Ä°stek baÅŸarÄ±sÄ±z olduÄŸunda Ã§alÄ±ÅŸacak fonksiyon
             console.error('Hata:', status, error);
         }
 
@@ -32,7 +32,7 @@ function FillOutList() {
 
 }
 
-//teklif oluþturma sayfasýnda müþteri açýlýr kutusu doldur
+//teklif oluÅŸturma sayfasÄ±nda mÃ¼ÅŸteri aÃ§Ä±lÄ±r kutusu doldur
 
 $(document).ready(function () {
     var C = 2;
@@ -40,28 +40,28 @@ $(document).ready(function () {
         url: '/Customer/CustomerList/' + C + '',
         type: 'GET',
         success: function (response) {
-            // Sunucudan gelen JSON yanýtýný al
+            // Sunucudan gelen JSON yanÄ±tÄ±nÄ± al
 
 
             fillDropDown(response);
         },
         error: function (xhr, status, error) {
-            console.error("Bir hata oluþtu: ", error);
+            console.error("Bir hata oluÅŸtu: ", error);
         }
     });
 
 });
 
-// Açýlýr kutuyu doldurma fonksiyonu
+// AÃ§Ä±lÄ±r kutuyu doldurma fonksiyonu
 function fillDropDown(customers) {
     var select = $("#customerSelect");
-    // Her bir stok için açýlýr kutuya bir seçenek ekle
+    // Her bir stok iÃ§in aÃ§Ä±lÄ±r kutuya bir seÃ§enek ekle
     customers.forEach(function (customers) {
         select.append("<option value='" + customers.code + "'>" + customers.name + "</option>");
     });
 }
 
-//müþteri açýlýr kutusu deðiþtiðinde 
+//mÃ¼ÅŸteri aÃ§Ä±lÄ±r kutusu deÄŸiÅŸtiÄŸinde 
 $(document).on('change', '#customerSelect', async function () {
     var C = 3;
     var Cod = $("#customerSelect").val();
@@ -70,11 +70,11 @@ $(document).on('change', '#customerSelect', async function () {
         url: '/Customer/CustomerList/' + C + '/' + Cod + '',
         type: 'GET',
         success: function (response) {
-            // Açýlýr kutuyu doldurma
+            // AÃ§Ä±lÄ±r kutuyu doldurma
             customerInformation(response);
         },
         error: function (xhr, status, error) {
-            console.error("Bir hata oluþtu: ", error);
+            console.error("Bir hata oluÅŸtu: ", error);
         }
     });
 
@@ -82,38 +82,38 @@ $(document).on('change', '#customerSelect', async function () {
 });
 
 function customerInformation(customers) {
-    // customerInformation id'sine sahip div'i seç
+    // customerInformation id'sine sahip div'i seÃ§
     var customerInformationDiv = document.getElementById("customerInformation");
 
-    // customerInformationDiv içeriðini temizle
+    // customerInformationDiv iÃ§eriÄŸini temizle
     customerInformationDiv.innerHTML = '';
 
 
 
-    // Yeni bir div oluþtur
+    // Yeni bir div oluÅŸtur
     var newDiv = document.createElement("div");
 
-    // Ýçeriði ayarla
+    // Ä°Ã§eriÄŸi ayarla
     customers.forEach(function (customer) {
-        // Yeni bir div oluþtur
+        // Yeni bir div oluÅŸtur
         var newDiv = document.createElement("div");
 
-        // Ýçeriði ayarla
+        // Ä°Ã§eriÄŸi ayarla
         newDiv.innerHTML =
-            '<h5 style="border-bottom: 2px solid black;">Musteri Bilgileri</h5>' +
+            '<h5 style="border-bottom: 2px solid black;">MÃ¼ÅŸteri Bilgileri</h5>' +
             '<p style="margin-bottom:2px;">Kodu   :' + customer.code + ' </p>' +
             '<p style="margin-bottom:2px;">VkNo   :' + customer.vkNo + ' </p>' +
             '<p style="margin-bottom:2px;">Email  :' + customer.email + ' </p>' +
             '<p style="margin-bottom:2px;">Ukle   :' + customer.country + ' </p>' +
             '<p style="margin-bottom:2px;">Adresi :' + customer.address + ' </p>';
 
-        // Yeni oluþturulan div'i customerInformationDiv'e ekle
+        // Yeni oluÅŸturulan div'i customerInformationDiv'e ekle
         customerInformationDiv.appendChild(newDiv);
     });
 }
 
 
-// ürün seç açýlýr kutusunu doldur
+// Ã¼rÃ¼n seÃ§ aÃ§Ä±lÄ±r kutusunu doldur
 $(document).ready(function () {
     $.ajax({
         url: '/Product/ProductList/2',
@@ -121,26 +121,26 @@ $(document).ready(function () {
         success: function (response) {
 
             var select = $("#productSelect");
-            // Her bir stok için açýlýr kutuya bir seçenek ekle
+            // Her bir stok iÃ§in aÃ§Ä±lÄ±r kutuya bir seÃ§enek ekle
             response.forEach(function (response) {
                 select.append("<option value='" + response.code + "'>" + response.name + "</option>");
             });
 
         },
         error: function (xhr, status, error) {
-            console.error("Bir hata oluþtu: ", error);
+            console.error("Bir hata oluÅŸtu: ", error);
         }
     });
 });
 
 
-/*siprariþ formu açýlýr kutudaki deðer deðiþtiðinde*/
+/*siprariÅŸ formu aÃ§Ä±lÄ±r kutudaki deÄŸer deÄŸiÅŸtiÄŸinde*/
 $("#productSelect").change(function () {
     var stockCode = $(this).val();
     FiyatGetir(stockCode)
 
 });
-/*stok seçildiðinde fiyat gelen */
+/*stok seÃ§ildiÄŸinde fiyat gelen */
 function FiyatGetir(stockCode) {
     if (stockCode.trim() !== '') {
         $.ajax({
@@ -150,18 +150,18 @@ function FiyatGetir(stockCode) {
                 $("#stockPrice").val(response.price);
             },
             error: function (xhr, status, error) {
-                console.error("Bir hata oluþtu: ", error);
+                console.error("Bir hata oluÅŸtu: ", error);
             }
         });
 
     } else {
-        // Seçilen deðer boþ ise, fiyat alanýný temizle
+        // SeÃ§ilen deÄŸer boÅŸ ise, fiyat alanÄ±nÄ± temizle
         $("#stockPrice").val('');
     }
 }
 
 
-/*adet deðiþtiðinde kullanýlan*/
+/*adet deÄŸiÅŸtiÄŸinde kullanÄ±lan*/
 $("#quantity").change("input", function () {
     calculateTotal();
 });
@@ -171,19 +171,19 @@ function calculateTotal() {
     var quantity = parseFloat($("#quantity").val());
     var stockPrice = parseFloat($("#stockPrice").val());
 
-    // Eðer adet veya birim fiyat boþsa veya NaN ise, toplam alanýný temizle
+    // EÄŸer adet veya birim fiyat boÅŸsa veya NaN ise, toplam alanÄ±nÄ± temizle
     if (isNaN(quantity) || isNaN(stockPrice)) {
         $("#total").val('');
         return;
     }
 
-    // Toplamý hesapla ve total alanýna yaz
+    // ToplamÄ± hesapla ve total alanÄ±na yaz
     var total = quantity * stockPrice;
-    $("#total").val(total.toFixed(2)); // Ýki ondalýk basamakla sýnýrla
+    $("#total").val(total.toFixed(2)); // Ä°ki ondalÄ±k basamakla sÄ±nÄ±rla
 }
 
 
-//ekle butonuna týlayýnca çalýþan iþlemler veritabanýna kayýt iþlemi yapýlýyor.
+//ekle butonuna tÄ±layÄ±nca Ã§alÄ±ÅŸan iÅŸlemler veritabanÄ±na kayÄ±t iÅŸlemi yapÄ±lÄ±yor.
 $(document).on('click', '#ekle', async function () {
     EkleIslemleri();
 })
@@ -234,17 +234,17 @@ function EkleIslemleri() {
         data: { offerrow: jsonData },
         success: function (response) {
             var UserTableID = response;
-            //tablo satýrlarý oluþturuluyor
+            //tablo satÄ±rlarÄ± oluÅŸturuluyor
             var tr = '<tr><td>' + ProductName + '</td><td>' + Piece + '</td><td>' + Price + '</td><td>' + Total + '</td><td><button id="silButton" readonly   data-usertableid="' + UserTableID + '" class="badge bg-danger text-white">Sil</button></td><td><td><a id="editOffer" data-userTableIdedit="' + UserTableID + '" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>';
             $("#OfferRowTable").append(tr);
-            //alanlarý temizle
+            //alanlarÄ± temizle
             $("#productSelect").val("");
             $("#stockPrice").val("");
             $("#total").val("");
             $("#quantity").val("");
         },
         error: function (xhr, textStatus, errorThrown) {
-            console.log("Hata oluþtu: " + errorThrown);
+            console.log("Hata oluÅŸtu: " + errorThrown);
         }
     });
 }
@@ -252,7 +252,7 @@ function EkleIslemleri() {
 
 
 
-//form açýldýðýnda sýra alanýný bul getir - seri sira alanýný yaz
+//form aÃ§Ä±ldÄ±ÄŸÄ±nda sÄ±ra alanÄ±nÄ± bul getir - seri sira alanÄ±nÄ± yaz
 $(document).ready(function () {
 
     $.ajax({
@@ -266,14 +266,14 @@ $(document).ready(function () {
 
         },
         error: function (xhr, status, error) {
-            console.error("Bir hata oluþtu: ", error);
+            console.error("Bir hata oluÅŸtu: ", error);
         }
     });
 
 })
 
 
-//form açýldýðýnda ekle - güncelle butonlarý ile ilgili iþelmler  
+//form aÃ§Ä±ldÄ±ÄŸÄ±nda ekle - gÃ¼ncelle butonlarÄ± ile ilgili iÅŸelmler  
 $(document).ready(function () {
     btnselection();
 });
@@ -290,7 +290,7 @@ function btnselection() {
     }
 }
 
-//edit butonuna týlayýnca çalýþan iþlemler veritabanýna kayýt iþlemi yapýlýyor.
+//edit butonuna tÄ±layÄ±nca Ã§alÄ±ÅŸan iÅŸlemler veritabanÄ±na kayÄ±t iÅŸlemi yapÄ±lÄ±yor.
 $(document).on('click', '#editOffer', async function () {
     var UserTableID = $(this).attr("data-userTableIdedit");
 
@@ -306,7 +306,7 @@ $(document).on('click', '#editOffer', async function () {
             $("#quantity").val(response.piece);
         },
         error: function (xhr, textStatus, errorThrown) {
-            console.log("Hata oluþtu: " + errorThrown);
+            console.log("Hata oluÅŸtu: " + errorThrown);
         }
     });
 })

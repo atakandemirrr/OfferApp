@@ -1,12 +1,12 @@
 "use strict";
 ; (function ($) {
     $.fn.datepicker.language['tr'] = {
-        days: ['Pazar', 'Pazartesi', 'Salý', 'Çarþamba', 'Perþembe', 'Cuma', 'Cumartesi'],
+        days: ['Pazar', 'Pazartesi', 'SalÄ±', 'Ã‡arÅŸamba', 'PerÅŸembe', 'Cuma', 'Cumartesi'],
         daysShort: ['Pz', 'Pt', 'Sa', 'Ca', 'Pe', 'Cu', 'Ct'],
         daysMin: ['Pz', 'Pt', 'Sa', 'Ca', 'Pe', 'Cu', 'Ct'],
-        months: ['Ocak', 'Þubat', 'Mart', 'Nisan', 'Mayýs', 'Haziran', 'Temmuz', 'Aðustos', 'Eylül', 'Ekim', 'Kasým', 'Aralýk'],
-        monthsShort: ['Oca', 'Þub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Aðu', 'Eyl', 'Eki', 'Kas', 'Ara'],
-        today: 'Bugün',
+        months: ['Ocak', 'Åžubat', 'Mart', 'Nisan', 'MayÄ±s', 'Haziran', 'Temmuz', 'AÄŸustos', 'EylÃ¼l', 'Ekim', 'KasÄ±m', 'AralÄ±k'],
+        monthsShort: ['Oca', 'Åžub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'AÄŸu', 'Eyl', 'Eki', 'Kas', 'Ara'],
+        today: 'BugÃ¼n',
         clear: 'Temizle',
         dateFormat: 'dd.mm.yyyy',
         timeFormat: 'hh:ii',

@@ -1,7 +1,7 @@
-var Modal1 = $('#ModalCreateProduct');
+ï»¿var Modal1 = $('#ModalCreateProduct');
 var Modal = $('#ModalUploadProduct');
 
-//sayfadaki modalý açmak için yapýldý ancak global js deki function u kullanýyorum.
+//sayfadaki modalÄ± aÃ§mak iÃ§in yapÄ±ldÄ± ancak global js deki function u kullanÄ±yorum.
 $(document).on('click', '#btnUploadModal', async function () {
     Modal.load("/Product/UploadProduct/", function () {
 
@@ -9,7 +9,7 @@ $(document).on('click', '#btnUploadModal', async function () {
     })
 });
 
-///düzenle butonuna týklayýnca gelir
+///dÃ¼zenle butonuna tÄ±klayÄ±nca gelir
 $(document).on('click', '#editProduct', async function () {
     var userTableId = $(this).attr("data-userTableId");
     Modal1.load("/Product/CreateProduct/" + userTableId + "", function () {
@@ -20,7 +20,7 @@ $(document).on('click', '#editProduct', async function () {
 
 
 
-//modal içerisindeki kaydet butonuna týklayýnca
+//modal iÃ§erisindeki kaydet butonuna tÄ±klayÄ±nca
 $(document).on('click', '#CreateProduct', async function () {
 
     DbIslemleri();
@@ -81,12 +81,12 @@ function DbIslemleri() {
             }
         },
         error: function (xhr, textStatus, errorThrown) {
-            console.log("Hata oluþtu: " + errorThrown);
+            console.log("Hata oluÅŸtu: " + errorThrown);
         }
     });
 }
 
-///sayfa açýldýðýnda listeyi oluþtur
+///sayfa aÃ§Ä±ldÄ±ÄŸÄ±nda listeyi oluÅŸtur
 $(document).ready(function () {
 
     FillOutList()
@@ -110,7 +110,7 @@ function FillOutList() {
             }
         },
         error: function (xhr, status, error) {
-            // Ýstek baþarýsýz olduðunda çalýþacak fonksiyon
+            // istek baÅŸarÄ±sÄ±z olduÄŸunda Ã§alÄ±ÅŸacak fonksiyon
             console.error('Hata:', status, error);
         }
 
@@ -118,7 +118,7 @@ function FillOutList() {
 
 }
 
-//excelden yükleme yap sayfaya
+//excelden yÃ¼kleme yap sayfaya
 $(document).on('change', '#excelFile', async function () {
     excelDosyaYukle();
 });
@@ -133,7 +133,7 @@ function excelDosyaYukle() {
             var sheetName = workbook.SheetNames[0];
             var sheet = workbook.Sheets[sheetName];
 
-            // Excel tablosundan sadece ilk 4 sütunu al ve boþ satýrlarý atla
+            // Excel tablosundan sadece ilk 4 sÃ¼tunu al ve boÅŸ satÄ±rlarÄ± atla
             var html = "";
             var range = XLSX.utils.decode_range(sheet['!ref']);
             for (var rowNum = range.s.r + 1; rowNum <= range.e.r; rowNum++) {
@@ -159,10 +159,10 @@ function excelDosyaYukle() {
         };
         reader.readAsArrayBuffer(file);
     } else {
-        alert('Lütfen bir dosya seçin.');
+        alert('LÃ¼tfen bir dosya seÃ§in.');
     }
 }
-///TABLODAN AL VERÝTABANINA KAYDET
+///TABLODAN AL VERÄ°TABANINA KAYDET
 $(document).on('click', '#upload', async function () {
     tablodanVeriAl();
 });
@@ -209,7 +209,7 @@ function tablodanVeriAl() {
                 }
             },
             error: function (xhr, textStatus, errorThrown) {
-                console.log("Hata oluþtu: " + errorThrown);
+                console.log("Hata oluÅŸtu: " + errorThrown);
             }
         });
 

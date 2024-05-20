@@ -1,8 +1,8 @@
+ï»¿
 
-
-//modal yükle sayfaya
+//modal yÃ¼kle sayfaya
 var Modal1 = $('#ModalCreateUser');
-//edit iþleminde yap
+//edit iÅŸleminde yap
 $(document).on('click', '#editUser', async function () {
     var userTableId = $(this).attr("data-userTableId");
     Modal1.load("/User/CreateUser/" + userTableId + "", function () {
@@ -11,7 +11,7 @@ $(document).on('click', '#editUser', async function () {
     })
 });
 
-///sayfa açýldýðýnda listeyi oluþtur
+///sayfa aÃ§Ä±ldÄ±ÄŸÄ±nda listeyi oluÅŸtur
 $(document).ready(function () {
 
     FillOutList()
@@ -35,7 +35,7 @@ function FillOutList() {
             }
         },
         error: function (xhr, status, error) {
-            // Ýstek baþarýsýz olduðunda çalýþacak fonksiyon
+            // Ä°stek baÅŸarÄ±sÄ±z olduÄŸunda Ã§alÄ±ÅŸacak fonksiyon
             console.error('Hata:', status, error);
         }
 
@@ -43,7 +43,7 @@ function FillOutList() {
 
 }
 
-///db iþlemleri 
+///db iÅŸlemleri 
 $(document).on('click', '#CreateUser', async function () {
     DbIslemleri();
 
@@ -89,7 +89,7 @@ function DbIslemleri() {
         success: function (response) {
 
             if (UserTableID == 0) {
-                //tablo satýrlarý oluþturuluyor
+                //tablo satÄ±rlarÄ± oluÅŸturuluyor
                 var tr = '<tr><td>' + UserTableID + '</td><td>' + Name + '</td><td>' + Surname + '</td><td>' + Email + '</td><td>' + Password + '</td><td><a id="editCustomer" href="/Customer/CreateCustomer/' + UserTableID + '"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td ></tr > ';
 
                 $("#UserTable").append(tr);
@@ -103,7 +103,7 @@ function DbIslemleri() {
 
         },
         error: function (xhr, textStatus, errorThrown) {
-            console.log("Hata oluþtu: " + errorThrown);
+            console.log("Hata oluÅŸtu: " + errorThrown);
         }
     });
 }
