@@ -26,7 +26,7 @@ namespace OfferApp.Controllers
 
 
                 var OfferList = _context.Offers
-        .Include(o => o.Customer) // LEFT JOIN için Include kullanıyoruz
+                                    .Include(o => o.Customer) // LEFT JOIN için Include kullanıyoruz
                                     .GroupBy(o => new
                                     {
                                         o.OfferDate,
@@ -97,6 +97,8 @@ namespace OfferApp.Controllers
 
         }
 
+
+        /*Şuan Kullanılmıyor*/
         [HttpGet]
         [Route("Offer/EditOffer/{UserTableID}")]
 
@@ -108,6 +110,33 @@ namespace OfferApp.Controllers
             return Json(OfferDatas);
         }
 
+
+        [HttpPost]
+       
+        public JsonResult EditOffer(string offerrow)
+        {
+            var offerUpdate = JsonConvert.DeserializeObject<Offer>(offerrow);
+
+            var Offer = _context.Offers.Where(o => o.UserTableId == offerUpdate.UserTableId);
+
+            if (Offer.Any())
+            {
+                foreach (var O in Offer)
+                {
+                    O.UpdateDate = offerUpdate.UpdateDate;
+                    O.UpdateUser = offerUpdate.UpdateUser;
+                    O.ProductCode = offerUpdate.ProductCode;
+                    O.Price = offerUpdate.Price;
+                    O.Total = offerUpdate.Total;
+                    O.Piece = offerUpdate.Piece;
+                }
+                _context.SaveChanges();
+
+                return Json("");
+            }
+            return Json("Teklif bulunamadı.");
+
+        }
 
     }
 }

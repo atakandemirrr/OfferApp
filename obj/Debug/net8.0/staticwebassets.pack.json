@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\OfferApp.bundle.scp.css"
     },
     {
-      "Id": "C:\\Projelerim\\OfferApp\\wwwroot\\AppJs\\Class.js",
-      "PackagePath": "staticwebassets\\AppJs\\Class.js"
-    },
-    {
       "Id": "C:\\Projelerim\\OfferApp\\wwwroot\\AppJs\\customer.js",
       "PackagePath": "staticwebassets\\AppJs\\customer.js"
     },

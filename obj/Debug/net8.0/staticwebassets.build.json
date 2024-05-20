@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Rh62RQcUYHR6J8dFaONvZVii7VP7uuLH5d0lmF0l4HU=",
+  "Hash": "b/8QqsZr5c4XxoJStW9Mk5w+j4v2G9pDwcYOsYtG7wk=",
   "Source": "OfferApp",
   "BasePath": "_content/OfferApp",
   "Mode": "Default",
@@ -167,25 +167,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ajax\\server-processing.php"
-    },
-    {
-      "Identity": "C:\\Projelerim\\OfferApp\\wwwroot\\AppJs\\Class.js",
-      "SourceId": "OfferApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projelerim\\OfferApp\\wwwroot\\",
-      "BasePath": "_content/OfferApp",
-      "RelativePath": "AppJs/Class.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\AppJs\\Class.js"
     },
     {
       "Identity": "C:\\Projelerim\\OfferApp\\wwwroot\\AppJs\\customer.js",

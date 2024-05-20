@@ -235,7 +235,7 @@ function EkleIslemleri() {
         success: function (response) {
             var UserTableID = response;
             //tablo satırları oluşturuluyor
-            var tr = '<tr><td>' + ProductName + '</td><td>' + Piece + '</td><td>' + Price + '</td><td>' + Total + '</td><td><button id="silButton" readonly   data-usertableid="' + UserTableID + '" class="badge bg-danger text-white">Sil</button></td><td><td><a id="editOffer" data-userTableIdedit="' + UserTableID + '" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>';
+            var tr = '<tr><td>' + Product + '</td><td>' + ProductName + '</td><td>' + Piece + '</td><td>' + Price + '</td><td>' + Total + '</td><td><button id="silButton" readonly   data-usertableid="' + UserTableID + '" class="badge bg-danger text-white">Sil</button></td><td><td><a id="editOffer" data-userTableIdedit="' + UserTableID + '" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>';
             $("#OfferRowTable").append(tr);
             //alanları temizle
             $("#productSelect").val("");
@@ -286,27 +286,79 @@ function btnselection() {
     if (btnscm == "0") {
         btnArea.append('<button style="width: 100%;" id="ekle" class="btn btn-primary" readonly>Ekle</button>');
     } else {
-        btnArea.append('<button type="hidden" style="width: 100%;" id="update" class="btn btn-primary" readonly>Guncelle</button>');
+        btnArea.append('<button type="hidden" style="width: 100%;" id="update" class="btn btn-primary" readonly>Güncelle</button>');
     }
 }
 
-//edit butonuna tılayınca çalışan işlemler veritabanına kayıt işlemi yapılıyor.
+//edit butonuna tılayınca çalışan işlemler.
 $(document).on('click', '#editOffer', async function () {
     var UserTableID = $(this).attr("data-userTableIdedit");
+    var tr = $(this).closest("tr");
+    currentRow = tr;
+    // Satırdaki verileri al
+    var stokKodu = tr.find("td:eq(0)").text();
+    var adet = tr.find("td:eq(2)").text();
+    var fiyat = tr.find("td:eq(3)").text();
+    var toplam = tr.find("td:eq(4)").text();
+
+
+    // Form alanlarına verileri yaz
+    $("#productSelect").val(stokKodu);
+    $("#quantity").val(adet);
+    $("#stockPrice").val(fiyat);
+    $("#total").val(toplam);
+    $("#BtnSecim").val(UserTableID);
+    $('#btnArea').empty();
+    btnselection();
+});
+
+$(document).on('click', '#update', async function () {
+    //güncellenmiş veriler
+    var UserTableID = $(this).attr("data-userTableIdedit");
+    var Product = $("#productSelect").val();
+    var ProductName = $("#productSelect").find('option:selected').text();
+    var Price = $("#stockPrice").val();
+    var Piece = $("#quantity").val();
+    var Total = $("#total").val();
+    var UpdateDate = $("#CreateDate").val();
+    var UpdateUser = $("#CreateUser").val();
+
+    var data = {
+        UpdateDate: UpdateDate,
+        UpdateUser: UpdateUser,
+        ProductCode: Product,
+        Piece: Piece,
+        Price: Price,
+        Total: Total
+    };
+    var jsonData = JSON.stringify(data);
+
 
     $.ajax({
-        type: "GET",
-        url: '/Offer/EditOffer/' + UserTableID + '',
-
-        dataType: 'json',
+        url: '/Offer/EditOffer',
+        type: 'Post',
+        data: { offerrow: jsonData },
         success: function (response) {
-            $("#productSelect").val(response.product);
-            $("#stockPrice").val(response.price);
-            $("#total").val(response.total);
-            $("#quantity").val(response.piece);
+            // İlgili satırdaki verileri güncelle
+            currentRow.find("td:eq(0)").text(Product);
+            currentRow.find("td:eq(1)").text(ProductName);
+            currentRow.find("td:eq(2)").text(Piece);
+            currentRow.find("td:eq(3)").text(Price);
+            currentRow.find("td:eq(4)").text(Total);
+            $("#BtnSecim").val(UserTableID);
+            $('#btnArea').empty();
+            btnselection();
+
+            $("#productSelect").val("");
+            $("#stockPrice").val("");
+            $("#total").val("");
+            $("#quantity").val("");
+
         },
-        error: function (xhr, textStatus, errorThrown) {
-            console.log("Hata oluştu: " + errorThrown);
+        error: function (xhr, status, error) {
+            console.error("Bir hata oluştu: ", error);
         }
     });
-})
+});
+
+
