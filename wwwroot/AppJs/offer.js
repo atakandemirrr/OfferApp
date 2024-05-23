@@ -19,7 +19,7 @@ function FillOutList() {
                 addRow(Offer);
             });
             function addRow(Offer) {
-                $('#OfferTable').append('<tr><td>' + Offer.name + '</td><td>' + Offer.seriSira + '</td><td>' + Offer.offerDate + '</td><td>' + Offer.deliveryDate + '</td><td>' + Offer.total + '</td><td><a id="editProduct" data-userTableId="" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>');
+                $('#OfferTable').append('<tr><td>' + Offer.name + '</td><td>' + Offer.seriSira + '</td><td>' + Offer.offerDate + '</td><td>' + Offer.deliveryDate + '</td><td>' + Offer.total + '</td><td><a id="editProduct" data-userTableId="" href="CreateOffer/' + Offer.offerSira +'"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>');
 
             }
         },
@@ -260,6 +260,7 @@ $(document).ready(function () {
         type: 'GET',
         success: function (response) {
             $("#OfferSira").val(response);
+            $("#OfferSeri").val('ABC');
             var metin = 'Teklif Seri - Sira : ABC - ' + response + '';
             const hElement = document.getElementById("serisira");
             hElement.textContent = metin;
@@ -361,4 +362,21 @@ $(document).on('click', '#update', async function () {
     });
 });
 
+
+//$(document).on('click', '#editProduct', async function () {
+    
+//    var UserTableID = $(this).attr("data-usertableid");
+   
+
+//    $.ajax({
+//        url: '/Offer/UpdateOffer/' + UserTableID + '',
+//        type: 'Get',
+//       success: function () {
+           
+//        },
+//        error: function (xhr, status, error) {
+//            console.error("Bir hata oluştu: ", error);
+//        }
+//    });
+//});
 

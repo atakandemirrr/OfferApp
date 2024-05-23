@@ -50,11 +50,23 @@ namespace OfferApp.Controllers
 
             return View();
         }
-        [HttpGet]
 
-        public IActionResult CreateOffer()
+        [HttpGet]
+        [Route("Offer/CreateOffer")]
+        [Route("Offer/CreateOffer/{OfferSira}")]
+        public IActionResult CreateOffer(int OfferSira)
         {
+            if(OfferSira != 0)
+            {
+                var offers = _context.Offers.Where(o => o.OfferSira == OfferSira).ToList();
+                if (!offers.Any())
+                {
+                    return NotFound();
+                }
+                return View(offers);
+            }
             return View();
+
         }
 
         [HttpGet]
@@ -137,6 +149,21 @@ namespace OfferApp.Controllers
             return Json("Teklif bulunamadı.");
 
         }
+      
+
+        /* UPDATE İÇİN YAPILDI SONRA KAPATILDI CREATE KULLANILICAK*/
+        //[HttpGet]
+        //[Route("Offer/UpdateOffer/{OfferSira}")]
+
+        //public IActionResult UpdateOffer(int OfferSira)
+        //{
+        //    var offers = _context.Offers.Where(o => o.OfferSira == OfferSira).ToList();
+        //    if (!offers.Any())
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View("CreateOffer", offers);
+        //}
 
     }
 }
