@@ -1,4 +1,4 @@
-@model OfferApp.Models.Offer
+@model OfferApp.ViewModels.VMOffer
 
 
 
@@ -9,14 +9,14 @@
 }
 
 
+
 <div class="card">
     <div class="card-header pb-0">
-
-        <input id="CreateDate" type="hidden" value="@DateTime.Today.ToString("yyyy-MM-dd")">
-        <input id="OfferSeri" type="hidden" value="ABC">
-        <input id="OfferSira" type="hidden" value="">
+        @Html.HiddenFor(model => model.Offers.First().CreateDate, new { @id = "CreateDate" })
+        @Html.HiddenFor(model => model.Offers.First().OfferSeri, new { @id = "OfferSeri" })
+        @Html.HiddenFor(model => model.Offers.First().OfferSira, new { @id = "OfferSira" })
         <input id="BtnSecim" type="hidden" value="0">
-        <input id="CreateUser" type="hidden" value="@User.Identity.Name">
+        @Html.HiddenFor(model => model.Offers.First().CreateUser, new { @id = "CreateUser", value = User.Identity.Name })
 
         <div class="row">
             <div class="col-md-4">
@@ -32,12 +32,23 @@
         <div class="mb-2">
             <div class="row">
                 <div class="col-md-12">
-                    <label class="col-form-label">Müşteri</label>
-                    <select id="customerSelect" class="js-example-placeholder-multiple col-sm-12">
-                        <option value="">Seçiniz..</option>
-                    </select>
-                </div>
 
+                    @if (@Model.Offers.First().CustomerCode == null)
+                    {
+                        <label class="col-form-label">Müşteri</label>
+                        <select id="customerSelect" class="js-example-placeholder-multiple col-sm-12">
+                            <option value="">Seçiniz..</option>
+                        </select>
+
+                    }
+                    else
+                    {
+                        <div class="row">
+                            <label>Müşteri</label>
+                        </div>                     
+                        <input class="col-md-12" id="customer" type="text" disabled="disabled" value="@Model.Offers.First().CustomerCode">
+                    }
+                </div>
             </div>
         </div>
         <div class="mb-2">
@@ -46,7 +57,7 @@
                     <label class="col-form-label text-end pt-0">Teklif Tarihi</label>
                     <div class="form-row">
                         <div class="col-md-12 mb-2">
-                            <input id="OfferDate" class="datepicker-here form-control digits" type="datetime" data-language="tr">
+                            @Html.TextBoxFor(model => model.Offers.First().OfferDate, new { @id = "OfferDate", @class = "datepicker-here form-control digits", @type = "datetime", @data_language = "tr" })
                         </div>
                     </div>
                 </div>
@@ -54,7 +65,7 @@
                 <div class="col-md-3">
                     <label class="col-form-label text-end pt-0">Teslim Tarihi</label>
                     <div class="input-group">
-                        <input id="DeliveryDate" class="datepicker-here form-control digits" type="datetime" data-language="tr">
+                        @Html.TextBoxFor(model => model.Offers.First().DeliveryDate, new { @id = "DeliveryDate", @class = "datepicker-here form-control digits", @type = "datetime", @data_language = "tr" })
                     </div>
                 </div>
                 <div id="customerInformation" class="col-md-6">
@@ -74,14 +85,16 @@
                 </div>
             </div>
             <div class="col-md-2">
-                <label>Birim Fiyat</label> <input id="stockPrice" readonly class="form-control digits" disabled="disabled" type="number">
+                <label>Birim Fiyat</label>
+                <input id="stockPrice" readonly class="form-control digits" disabled="disabled" type="number">
             </div>
             <div class="col-md-2">
                 <label>Adet</label>
                 <input id="quantity" class="form-control digits" type="number">
             </div>
             <div class="col-md-2">
-                <label>Tutar</label><input id="total" class="form-control digits" disabled="disabled" type="number">
+                <label>Tutar</label>
+                <input id="total" class="form-control digits" disabled="disabled" type="number">
             </div>
         </div>
         <div class="row">

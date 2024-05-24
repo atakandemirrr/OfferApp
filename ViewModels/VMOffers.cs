@@ -4,7 +4,7 @@ namespace OfferApp.ViewModels
 {
     public class VMOffer
     {
-      public Offer Offer { get; set; } = new Offer();
+      public List<Offer> Offers { get; set; } = new List<Offer>();
 
     }
 }

@@ -52,7 +52,7 @@ $(document).ready(function () {
 
 });
 
-// Açılır kutuyu doldurma fonksiyonu
+// Müşteri Açılır kutuyu doldurma fonksiyonu
 function fillDropDown(customers) {
     var select = $("#customerSelect");
     // Her bir stok için açılır kutuya bir seçenek ekle

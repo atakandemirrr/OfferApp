@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using OfferApp.Models;
+using OfferApp.ViewModels;
 
 namespace OfferApp.Controllers
 {
@@ -45,29 +47,30 @@ namespace OfferApp.Controllers
                                         Total = g.Sum(o => o.Total)
                                     })
                                     .ToList();
-                                            return Json(OfferList);
-                                        }
+                return Json(OfferList);
+            }
 
             return View();
         }
 
         [HttpGet]
         [Route("Offer/CreateOffer")]
-        [Route("Offer/CreateOffer/{OfferSira}")]
-        public IActionResult CreateOffer(int OfferSira)
+        [Route("Offer/CreateOffer/{OfferSira?}")]
+        public IActionResult CreateOffer(int? OfferSira)
         {
-            if(OfferSira != 0)
+            ViewModels.VMOffer model = new VMOffer();
+            if (OfferSira.HasValue && OfferSira.Value != 0)
             {
-                var offers = _context.Offers.Where(o => o.OfferSira == OfferSira).ToList();
-                if (!offers.Any())
-                {
-                    return NotFound();
-                }
-                return View(offers);
-            }
-            return View();
 
+                model.Offers = _context.Offers.Where(x=>x.OfferSira==OfferSira).ToList();
+
+
+                return View(model);
+            }
+            return View(model);
         }
+
+
 
         [HttpGet]
         [Route("Offer/OfferSira")]
@@ -124,7 +127,7 @@ namespace OfferApp.Controllers
 
 
         [HttpPost]
-       
+
         public JsonResult EditOffer(string offerrow)
         {
             var offerUpdate = JsonConvert.DeserializeObject<Offer>(offerrow);
@@ -149,7 +152,7 @@ namespace OfferApp.Controllers
             return Json("Teklif bulunamadı.");
 
         }
-      
+
 
         /* UPDATE İÇİN YAPILDI SONRA KAPATILDI CREATE KULLANILICAK*/
         //[HttpGet]
