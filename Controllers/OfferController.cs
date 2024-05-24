@@ -28,7 +28,7 @@ namespace OfferApp.Controllers
 
 
                 var OfferList = _context.Offers
-                                    .Include(o => o.Customer) // LEFT JOIN için Include kullanıyoruz
+                                    .Include(o => o.Customer) // LEFT JOIN için Include kullanıyoruz                                    
                                     .GroupBy(o => new
                                     {
                                         o.OfferDate,
@@ -46,6 +46,7 @@ namespace OfferApp.Controllers
                                         Name = g.Key.Name,
                                         Total = g.Sum(o => o.Total)
                                     })
+                                    .OrderBy(o=>o.OfferSira)
                                     .ToList();
                 return Json(OfferList);
             }
@@ -62,9 +63,12 @@ namespace OfferApp.Controllers
             if (OfferSira.HasValue && OfferSira.Value != 0)
             {
 
-                model.Offers = _context.Offers.Where(x=>x.OfferSira==OfferSira).ToList();
-
-
+                model.Offers = _context.Offers
+                    .Include(o => o.Customer)
+                    .Include(o => o.Product)
+                    .Where(x=>x.OfferSira==OfferSira).ToList();
+                model._Offer = model.Offers.First();
+          
                 return View(model);
             }
             return View(model);
@@ -167,6 +171,24 @@ namespace OfferApp.Controllers
         //    }
         //    return View("CreateOffer", offers);
         //}
+
+        [HttpPost]
+        [Route("Offer/RowDeleteOffer/{UserTableID}")]
+
+        public IActionResult RowDeleteOffer(int UserTableID)
+        {
+            var siparis = _context.Offers.FirstOrDefault(o => o.UserTableId == UserTableID);
+
+            if (siparis != null)
+            {
+                _context.Offers.Remove(siparis);
+                _context.SaveChanges();
+
+                return Ok("Sipariş başarıyla silindi.");
+            }
+
+            return NotFound("Sipariş bulunamadı.");
+        }
 
     }
 }

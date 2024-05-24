@@ -12,12 +12,11 @@
 
 <div class="card">
     <div class="card-header pb-0">
-        @Html.HiddenFor(model => model.Offers.First().CreateDate, new { @id = "CreateDate" })
-        @Html.HiddenFor(model => model.Offers.First().OfferSeri, new { @id = "OfferSeri" })
-        @Html.HiddenFor(model => model.Offers.First().OfferSira, new { @id = "OfferSira" })
+        <input id="CreateDate" type="hidden" value="@DateTime.Today.ToString("yyyy-MM-dd")">
+        <input id="CreateUser" type="hidden" value="@User.Identity.Name">
+        @Html.HiddenFor(model => model._Offer.OfferSeri, new { @id = "OfferSeri" })
+        @Html.HiddenFor(model => model._Offer.OfferSira, new { @id = "OfferSira" })
         <input id="BtnSecim" type="hidden" value="0">
-        @Html.HiddenFor(model => model.Offers.First().CreateUser, new { @id = "CreateUser", value = User.Identity.Name })
-
         <div class="row">
             <div class="col-md-4">
                 <h5 id="serisira"></h5>
@@ -33,7 +32,7 @@
             <div class="row">
                 <div class="col-md-12">
 
-                    @if (@Model.Offers.First().CustomerCode == null)
+                    @if (@Model._Offer.CustomerCode == null)
                     {
                         <label class="col-form-label">Müşteri</label>
                         <select id="customerSelect" class="js-example-placeholder-multiple col-sm-12">
@@ -45,8 +44,9 @@
                     {
                         <div class="row">
                             <label>Müşteri</label>
-                        </div>                     
-                        <input class="col-md-12" id="customer" type="text" disabled="disabled" value="@Model.Offers.First().CustomerCode">
+                        </div>
+                        <input id="customerSelect" type="hidden" value="@Model._Offer.CustomerCode">
+                        <input class="col-md-12" id="customer" type="text" disabled="disabled" value="@Model._Offer.Customer.Name">
                     }
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     <label class="col-form-label text-end pt-0">Teklif Tarihi</label>
                     <div class="form-row">
                         <div class="col-md-12 mb-2">
-                            @Html.TextBoxFor(model => model.Offers.First().OfferDate, new { @id = "OfferDate", @class = "datepicker-here form-control digits", @type = "datetime", @data_language = "tr" })
+                            @Html.TextBoxFor(model => model._Offer.OfferDate, new { @id = "OfferDate", @class = "datepicker-here form-control digits", @type = "datetime", @data_language = "tr" })
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                 <div class="col-md-3">
                     <label class="col-form-label text-end pt-0">Teslim Tarihi</label>
                     <div class="input-group">
-                        @Html.TextBoxFor(model => model.Offers.First().DeliveryDate, new { @id = "DeliveryDate", @class = "datepicker-here form-control digits", @type = "datetime", @data_language = "tr" })
+                        @Html.TextBoxFor(model => model._Offer.DeliveryDate, new { @id = "DeliveryDate", @class = "datepicker-here form-control digits", @type = "datetime", @data_language = "tr" })
                     </div>
                 </div>
                 <div id="customerInformation" class="col-md-6">
@@ -116,6 +116,26 @@
                     </tr>
                 </thead>
                 <tbody id="OfferRowTable">
+                    @foreach (var P in Model.Offers)
+                    {
+                        <tr>
+
+                            <td>@P.ProductCode</td>
+                            <td>@P.Product.Name</td>
+                            <td>@P.Price</td>
+                            <td>@P.Piece</td>
+                            <td>@P.Total</td>
+                            <td>
+                                <button id="silButton" readonly data-usertableid="@P.UserTableId" class="badge bg-danger text-white">Sil</button>
+                            </td>
+                            <td>
+                                <a data-userTableIdedit="@P.UserTableId" id="editOffer" href="#"><li data-feather="edit"></li></a>
+
+                            </td>
+
+
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
