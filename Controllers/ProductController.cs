@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using OfferApp.Models;
 using OfferApp.ViewModels;
@@ -8,6 +9,7 @@ using System.Text.Json.Serialization;
 
 namespace OfferApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         public readonly DataContext _context;

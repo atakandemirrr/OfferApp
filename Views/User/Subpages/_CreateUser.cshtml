@@ -16,38 +16,49 @@
         <input id="CreateDate" type="hidden" value="@DateTime.Today.ToString("yyyy-MM-dd")">
         <input id="CreateUser" type="hidden" value="@User.Identity.Name">
         <div class="modal-body">
-                <div class="theme-form login-form" >
-                    <div class="form-group">
-                        <div class="small-group">
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="icon-user"></i></span>
+            <div class="theme-form login-form">
+                <div class="form-group">
+                    <div class="small-group">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="icon-user"></i></span>
                             @Html.TextBoxFor(x => x.User.Name, new { @class = "form-control", @type = "text", @id = "Name", @placeholder = "Adı" })
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="icon-user"></i></span>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="icon-user"></i></span>
                             @Html.TextBoxFor(x => x.User.Surname, new { @class = "form-control", @type = "text", @id = "Surname", @placeholder = "Soyadı" })
-                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="icon-email"></i></span>
-                        @Html.TextBoxFor(x => x.User.Email, new { @class = "form-control", @type = "email", @id = "Email", @placeholder = "Test@gmail.com" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Parola</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="icon-lock"></i></span>
-                        @Html.TextBoxFor(x => x.User.Password, new { @class = "form-control", @type = "text", @id = "password", @placeholder = "******" })
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                    <button id="CreateUser" class="btn btn-primary btn-block" >Kaydet</button>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="icon-email"></i></span>
+                        @Html.TextBoxFor(x => x.User.Email, new { @class = "form-control", @type = "email", @id = "Email", @placeholder = "Test@gmail.com" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Parola</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                        @Html.TextBoxFor(x => x.User.Password, new { @class = "form-control", @type = "text", @id = "password", @placeholder = "******" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Admin Mi ?</label>
+                    <div>
+                        @Html.DropDownListFor(m => m.User.IsAdmin, new SelectList(new[]
+                                 {
+
+                        new { Value = "false", Text = "Hayır" },
+                        new { Value = "true", Text = "Evet" }
+                        }, "Value", "Text"), new { @class = "form-select form-control", @id = "bootstrap-notify-placement-from" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button id="CreateUser" class="btn btn-primary btn-block">Kaydet</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

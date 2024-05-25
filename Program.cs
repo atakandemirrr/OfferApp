@@ -21,7 +21,15 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         options.Cookie.Name = "NetCoreMvc.Auth";
         options.LoginPath = "/Login/LoginProcedures";
+        options.AccessDeniedPath = "/Panel/PanelPage";
     });
+
+//Role için eklendi
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+});
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

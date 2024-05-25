@@ -7,7 +7,7 @@ using System.Net;
 
 namespace OfferApp.Controllers
 {
-    //[Authorize]
+    [Authorize(Roles = "Admin")]
     public class CustomerController : Controller
     {
         public readonly DataContext _context;

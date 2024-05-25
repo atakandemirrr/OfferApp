@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using OfferApp.Models;
 using System.Data;
 using System.Security.Claims;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace OfferApp.Controllers
 {
@@ -74,7 +75,8 @@ namespace OfferApp.Controllers
                         // Kullanıcı bulundu, oturum açma işlemini gerçekleştir
                         var claims = new List<Claim>
                         {
-                            new Claim(ClaimTypes.Name,"0") // Admini 0 Yaptım
+                            new Claim(ClaimTypes.Name,"0"), // Admini 0 Yaptım
+                             new Claim(ClaimTypes.Role, "Admin")
                         };
                         var userIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         var principal = new AuthenticationProperties
@@ -93,7 +95,8 @@ namespace OfferApp.Controllers
                             // Kullanıcı bulundu, oturum açma işlemini gerçekleştir
                             var claims = new List<Claim>
                         {
-                            new Claim(ClaimTypes.Name,"0") // Admini 0 Yaptım
+                                new Claim(ClaimTypes.Name,"0"), // Admini 0 Yaptım
+                            new Claim(ClaimTypes.Role, "Admin")
                         };
                             var userIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                             var principal = new AuthenticationProperties
@@ -120,7 +123,8 @@ namespace OfferApp.Controllers
 
                     var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, data.UserTableId.ToString())
+                    new Claim(ClaimTypes.Name, data.UserTableId.ToString()),
+                    new Claim(ClaimTypes.Role, data.IsAdmin ? "Admin" : "")
                 };
                     var userIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     var principal = new AuthenticationProperties

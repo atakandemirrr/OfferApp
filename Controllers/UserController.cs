@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OfferApp.Models;
 
 namespace OfferApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         public readonly DataContext _context;
