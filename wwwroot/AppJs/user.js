@@ -60,7 +60,7 @@ function DbIslemleri() {
     var Email = $("#Email").val();
     var password = $("#password").val();
     var IsPasivve = 0;
-    var IsAdmin = 0;
+    var IsAdmin = $("#bootstrap-notify-placement-from").val();
 
 
     var User = {

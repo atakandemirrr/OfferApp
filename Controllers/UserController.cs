@@ -42,9 +42,7 @@ namespace OfferApp.Controllers
                         U.Surname = A.Surname;
                         U.Email = A.Email;
                         U.Password = A.Password;
-                      
-
-
+                        U.IsAdmin = A.IsAdmin; 
                     }
                     _context.SaveChanges();
 
