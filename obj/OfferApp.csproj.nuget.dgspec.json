@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\OfferApp.csproj": {}
+    "C:\\Projelerim\\OfferApp\\OfferApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\OfferApp.csproj": {
+    "C:\\Projelerim\\OfferApp\\OfferApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\OfferApp.csproj",
+        "projectUniqueName": "C:\\Projelerim\\OfferApp\\OfferApp.csproj",
         "projectName": "OfferApp",
-        "projectPath": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\OfferApp.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\obj\\",
+        "projectPath": "C:\\Projelerim\\OfferApp\\OfferApp.csproj",
+        "packagesPath": "C:\\Users\\ataka\\.nuget\\packages\\",
+        "outputPath": "C:\\Projelerim\\OfferApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ataka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,6 +62,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

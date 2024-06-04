@@ -1,18 +1,15 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using OfferApp.Models;
+using OfferApp.SignalR;
 using System.Globalization;
-using System.Reflection;
 
 
 
-    
+
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddSignalR();
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataConnection")));
 
 
@@ -35,6 +32,8 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+app.MapHub<ChatHub>("/chatHub");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
