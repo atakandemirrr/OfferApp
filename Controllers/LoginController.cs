@@ -76,7 +76,8 @@ namespace OfferApp.Controllers
                         var claims = new List<Claim>
                         {
                             new Claim(ClaimTypes.Name,"0"), // Admini 0 Yaptım
-                             new Claim(ClaimTypes.Role, "Admin")
+                             new Claim(ClaimTypes.Role, "Admin"),
+                             new Claim(ClaimTypes.Surname, "Admin")
                         };
                         var userIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         var principal = new AuthenticationProperties
@@ -96,7 +97,9 @@ namespace OfferApp.Controllers
                             var claims = new List<Claim>
                         {
                                 new Claim(ClaimTypes.Name,"0"), // Admini 0 Yaptım
-                            new Claim(ClaimTypes.Role, "Admin")
+                            new Claim(ClaimTypes.Role, "Admin"),
+                             new Claim(ClaimTypes.Surname, "Admin")
+
                         };
                             var userIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                             var principal = new AuthenticationProperties
@@ -124,7 +127,9 @@ namespace OfferApp.Controllers
                     var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, data.UserTableId.ToString()),
-                    new Claim(ClaimTypes.Role, data.IsAdmin ? "Admin" : "")
+                    new Claim(ClaimTypes.Role, data.IsAdmin ? "Admin" : ""),
+                             new Claim(ClaimTypes.Surname,data.Name)
+
                 };
                     var userIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     var principal = new AuthenticationProperties

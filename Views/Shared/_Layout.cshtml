@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -49,6 +50,7 @@
     <link id="color" rel="stylesheet" href="~/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="~/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="~/css/ChatBtn.css">
 
 </head>
 
@@ -108,7 +110,7 @@
                             {
                                 <li><a class="nav-link menu-title" asp-controller="Panel" asp-action="PanelPage"><span>Ana Sayfa</span></a></li>
                                 <li><a class="nav-link menu-title" asp-controller="Offer" asp-action="OfferList"><span>Teklifler</span></a></li>
-                                <li><a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Chat"><span>Chat</span></a></li>
+
                             }
                             else
                             {
@@ -117,7 +119,7 @@
                                 <li><a class="nav-link menu-title" asp-controller="Product" asp-action="ProductList"><span>Ürünler</span></a></li>
                                 <li><a class="nav-link menu-title" asp-controller="Offer" asp-action="OfferList"><span>Teklifler</span></a></li>
                                 <li><a class="nav-link menu-title" asp-controller="User" asp-action="UserList"><span>Kullanıcılar</span></a></li>
-                                <li><a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Chat"><span>Chat</span></a></li>
+
                             }
                         </ul>
                     </div>
@@ -127,6 +129,38 @@
             <div class="page-body">
 
                 @RenderBody()
+                 <button class="chat-button" id="ShowHidden" @* data-bs-toggle="modal" data-bs-target="#Chat" *@>Chat</button>
+
+
+
+                <div style="display: none;" id="chatdiv" class="chatcss">
+                    <div class="col chat-right-aside">
+
+                        <div class="chat">
+                            <button class="btn-close" id="ShowHidden" type="button" aria-label="Close"></button>
+                            <div class="chat-history chat-msg-box custom-scrollbar">
+                                <ul class="chatlist" id="messagesList">
+                                </ul>
+                            </div>
+
+                            <div class="chat-message clearfix">
+                                <div class="row">
+                                    <div class="col-xl-12 d-flex">
+                                        <div class="smiley-box bg-primary">
+                                            <div class="picker"><img src="~/images/smiley.png" alt=""></div>
+                                        </div>
+
+                                        <div class="input-group text-box">
+                                            <input class="form-control input-txt-bx" id="messageInput" type="text" name="message-to-send" placeholder="Type a message......">
+                                            <button class="btn btn-primary input-group-text" type="button" id="sendButton">SEND</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
         </div>
@@ -179,7 +213,6 @@
 
     <script src="~/signalr/signalr.js"></script>
     <script src="~/signalr/chat.js"></script>
-   
 
     <!-- login js-->
     <!-- Plugin used-->
@@ -188,41 +221,45 @@
     <div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalContracts" aria-hidden="true"></div>
     @RenderSection("Scripts", required: false)
 </body>
-<div id="Chat" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+@* <div id="Chat" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" @* id="Chat" *@>Chat</h4>
+                <h4 class="modal-title">Chat</h4>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="container">
-                    <div class="row p-1">
-                        <div class="col-1">User</div>
-                        <div class="col-5"><input type="text" id="userInput" /></div>
-                    </div>
-                    <div class="row p-1">
-                        <div class="col-1">Message</div>
-                        <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
-                    </div>
-                    <div class="row p-1">
-                        <div class="col-6 text-end">
-                            <input type="button" id="sendButton" value="Send Message" />
+
+                <div class="col chat-right-aside">
+                    <!-- chat start-->
+                    <div class="chat">
+                        <!-- chat-header start-->
+                        <!-- chat-header end-->
+                        <div class="chat-history chat-msg-box custom-scrollbar">
+                            <ul id="messagesList">
+                            </ul>
                         </div>
-                    </div>
-                    <div class="row p-1">
-                        <div class="col-6">
-                            <hr />
-                        </div>
-                    </div>
-                    <div class="row p-1">
-                        <div class="col-6">
-                            <ul id="messagesList"></ul>
+                        <!-- end chat-history-->
+                        <div class="chat-message clearfix">
+                            <div class="row">
+                                <div class="col-xl-12 d-flex">
+                                    <div class="smiley-box bg-primary">
+                                        <div class="picker"><img src="~/images/smiley.png" alt=""></div>
+                                    </div>
+
+                                    <div class="input-group text-box">
+                                        <input class="form-control input-txt-bx" id="messageInput" type="text" name="message-to-send" placeholder="Type a message......">
+                                        <button class="btn btn-primary input-group-text" type="button" id="sendButton">SEND</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-</div>
+</div> *@
 </html>
+

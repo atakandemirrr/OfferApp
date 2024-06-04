@@ -1,0 +1,36 @@
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .chat-button:hover {
+        background-color: #005f6b;
+    }
+
+.chatcontent {
+    height: 2000px; /* Just to demonstrate scrolling */
+    padding: 20px;
+}
+
+
+.chatcss {
+    position: fixed;
+    bottom: 20px; /* Sayfanın altından 20 piksel yukarıda */
+    right: 20px; /* Sayfanın sağ tarafından 20 piksel içeride */
+    z-index: 1000; /* Diğer içeriklerin üstünde */
+    background-color: white; /* Arka plan rengi */
+    border-radius: 5px; /* Köşeleri yuvarla */
+    padding: 20px; /* İçeriği doldur */
+ 
+}
+
+.chatlist {
+    height: 250px;
+}

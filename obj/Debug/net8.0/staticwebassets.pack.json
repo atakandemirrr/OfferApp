@@ -57,6 +57,14 @@
       "PackagePath": "staticwebassets\\audio\\horse.ogg"
     },
     {
+      "Id": "C:\\Projelerim\\OfferApp\\wwwroot\\css\\ChatBtn.css",
+      "PackagePath": "staticwebassets\\css\\ChatBtn.css"
+    },
+    {
+      "Id": "C:\\Projelerim\\OfferApp\\wwwroot\\css\\ChatBtn.css.map",
+      "PackagePath": "staticwebassets\\css\\ChatBtn.css.map"
+    },
+    {
       "Id": "C:\\Projelerim\\OfferApp\\wwwroot\\css\\animate.css",
       "PackagePath": "staticwebassets\\css\\animate.css"
     },

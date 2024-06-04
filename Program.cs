@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using OfferApp.Models;
-using OfferApp.SignalR;
+using OfferApp.Hubs;
 using System.Globalization;
+
 
 
 
