@@ -129,39 +129,64 @@
             <div class="page-body">
 
                 @RenderBody()
-                 <button class="chat-button" id="ShowHidden" @* data-bs-toggle="modal" data-bs-target="#Chat" *@>Chat</button>
+                <button class="chat-button" id="ShowHidden" @* data-bs-toggle="modal" data-bs-target="#Chat" *@>Chat</button>
 
 
 
                 <div style="display: none;" id="chatdiv" class="chatcss">
                     <div class="col chat-right-aside">
+                        <button class="btn-close" id="ShowHidden" type="button" aria-label="Close"></button>
+                        <div class="row">
+                            <div class="col call-chat-sidebar">
+                                <div class="card">
+                                    <div class="card-body chat-body">
+                                        <div class="chat-box">
+                                            <div class="chat-left-aside">
+                                                <ul class="list custom-scrollbar">
+                                                    <li class="clearfix">
+                                                        <div class="media">
+                                                            <div class="media-body">
+                                                                <div class="about">
+                                                                    <div class="name">test</div>
+                                                                    <div class="status">Çevrimiçi</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
 
-                        <div class="chat">
-                            <button class="btn-close" id="ShowHidden" type="button" aria-label="Close"></button>
-                            <div class="chat-history chat-msg-box custom-scrollbar">
-                                <ul class="chatlist" id="messagesList">
-                                </ul>
-                            </div>
-
-                            <div class="chat-message clearfix">
-                                <div class="row">
-                                    <div class="col-xl-12 d-flex">
-                                        <div class="smiley-box bg-primary">
-                                            <div class="picker"><img src="~/images/smiley.png" alt=""></div>
-                                        </div>
-
-                                        <div class="input-group text-box">
-                                            <input class="form-control input-txt-bx" id="messageInput" type="text" name="message-to-send" placeholder="Type a message......">
-                                            <button class="btn btn-primary input-group-text" type="button" id="sendButton">SEND</button>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col call-chat-body">
+                                <div class="chat">
+                                    <div class="chat-history chat-msg-box custom-scrollbar">
+                                        <ul class="chatlist" id="messagesList">
+                                        </ul>
+                                    </div>
+                                    <div class="chat-message clearfix">
+                                        <div class="row">
+                                            <div class="col-xl-12 d-flex">
+                                                <div class="smiley-box bg-primary">
+                                                    <div class="picker"><img src="~/images/smiley.png" alt=""></div>
+                                                </div>
+
+                                                <div class="input-group text-box">
+                                                    <input class="form-control input-txt-bx" id="messageInput" type="text" name="message-to-send" placeholder="Type a message......">
+                                                    <button class="btn btn-primary input-group-text" type="button" id="sendButton">SEND</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
