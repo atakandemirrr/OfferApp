@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Projelerim\\OfferApp\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\wwwroot\\signalr\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\wwwroot\\signalr\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:wwwroot\\signalr\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\projelerim\\offerapp\\wwwroot\\css\\chatbtn.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:wwwroot\\css\\chatbtn.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\wwwroot\\appjs\\customer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:wwwroot\\appjs\\customer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|c:\\users\\user\\desktop\\repostory\\offerapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C7BBFBC5-2D89-439F-8D22-A37567D67532}|OfferApp.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,36 +39,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ChatBtn.css",
-              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\wwwroot\\css\\ChatBtn.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\ChatBtn.css",
-              "ToolTip": "C:\\Projelerim\\OfferApp\\wwwroot\\css\\ChatBtn.css",
-              "RelativeToolTip": "wwwroot\\css\\ChatBtn.css",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-06-04T14:11:52.23Z"
+              "Title": "customer.js",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\AppJs\\customer.js",
+              "RelativeDocumentMoniker": "wwwroot\\AppJs\\customer.js",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\AppJs\\customer.js",
+              "RelativeToolTip": "wwwroot\\AppJs\\customer.js",
+              "ViewState": "AQIAANUAAAAAAAAAAAAgwHMAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-06-07T18:43:41.892Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "chat.js",
-              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\wwwroot\\SignalR\\chat.js",
-              "RelativeDocumentMoniker": "wwwroot\\SignalR\\chat.js",
-              "ToolTip": "C:\\Projelerim\\OfferApp\\wwwroot\\SignalR\\chat.js",
-              "RelativeToolTip": "wwwroot\\SignalR\\chat.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-04T09:26:37.567Z"
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Hubs\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "Hubs\\ChatHub.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T16:51:46.565Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "chat.js",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\SignalR\\chat.js",
+              "RelativeDocumentMoniker": "wwwroot\\SignalR\\chat.js",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\wwwroot\\SignalR\\chat.js",
+              "RelativeToolTip": "wwwroot\\SignalR\\chat.js",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-06-04T09:26:37.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Projelerim\\OfferApp\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Projelerim\\OfferApp\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Repostory\\OfferApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAIoAAAAAAAAAAADwv5MAAAA7AAAA",
+              "ViewState": "AQIAAIQAAAAAAAAAAADwv5IAAABZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-04T09:21:05.545Z",
               "EditorCaption": ""

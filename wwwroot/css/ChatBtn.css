@@ -15,22 +15,38 @@
     }
 
 .chatcontent {
-    height: 2000px; /* Just to demonstrate scrolling */
+    height: 2000px; 
     padding: 20px;
 }
 
 
 .chatcss {
     position: fixed;
-    bottom: 20px; /* Sayfanın altından 20 piksel yukarıda */
-    right: 20px; /* Sayfanın sağ tarafından 20 piksel içeride */
-    z-index: 1000; /* Diğer içeriklerin üstünde */
-    background-color: white; /* Arka plan rengi */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    padding: 20px; /* İçeriği doldur */
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1000;
+    background-color: white; 
+    border-radius: 5px;
+    padding: 20px; 
  
 }
 
 .chatlist {
     height: 250px;
 }
+
+
+.user-item {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+    .user-item:hover {
+        background-color: #f1f1f1;
+    }
+
+    .user-item.selected {
+        background-color: #007bff;
+        color: white;
+    }

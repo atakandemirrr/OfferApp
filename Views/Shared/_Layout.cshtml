@@ -106,13 +106,7 @@
                             <li class="back-btn">
                                 <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                             </li>
-                            @if (User.IsInRole("User"))
-                            {
-                                <li><a class="nav-link menu-title" asp-controller="Panel" asp-action="PanelPage"><span>Ana Sayfa</span></a></li>
-                                <li><a class="nav-link menu-title" asp-controller="Offer" asp-action="OfferList"><span>Teklifler</span></a></li>
-
-                            }
-                            else
+                            @if (User.IsInRole("Admin"))
                             {
                                 <li><a class="nav-link menu-title" asp-controller="Panel" asp-action="PanelPage"><span>Ana Sayfa</span></a></li>
                                 <li><a class="nav-link menu-title" asp-controller="Customer" asp-action="CustomerList"><span>Müşteriler</span></a></li>
@@ -120,6 +114,13 @@
                                 <li><a class="nav-link menu-title" asp-controller="Offer" asp-action="OfferList"><span>Teklifler</span></a></li>
                                 <li><a class="nav-link menu-title" asp-controller="User" asp-action="UserList"><span>Kullanıcılar</span></a></li>
 
+
+
+                            }
+                            else
+                            {
+                                <li><a class="nav-link menu-title" asp-controller="Panel" asp-action="PanelPage"><span>Ana Sayfa</span></a></li>
+                                <li><a class="nav-link menu-title" asp-controller="Offer" asp-action="OfferList"><span>Teklifler</span></a></li>
                             }
                         </ul>
                     </div>
@@ -142,24 +143,15 @@
                                     <div class="card-body chat-body">
                                         <div class="chat-box">
                                             <div class="chat-left-aside">
-                                                <ul class="list custom-scrollbar">
-                                                    <li class="clearfix">
-                                                        <div class="media">
-                                                            <div class="media-body">
-                                                                <div class="about">
-                                                                    <div class="name">test</div>
-                                                                    <div class="status">Çevrimiçi</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-
+                                                <ul id="onlineUser" class="list custom-scrollbar">
+                                                 @*    <li class="user-item">aaaa</li> *@
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
 
                             <div class="col call-chat-body">
                                 <div class="chat">
@@ -170,10 +162,6 @@
                                     <div class="chat-message clearfix">
                                         <div class="row">
                                             <div class="col-xl-12 d-flex">
-                                                <div class="smiley-box bg-primary">
-                                                    <div class="picker"><img src="~/images/smiley.png" alt=""></div>
-                                                </div>
-
                                                 <div class="input-group text-box">
                                                     <input class="form-control input-txt-bx" id="messageInput" type="text" name="message-to-send" placeholder="Type a message......">
                                                     <button class="btn btn-primary input-group-text" type="button" id="sendButton">SEND</button>

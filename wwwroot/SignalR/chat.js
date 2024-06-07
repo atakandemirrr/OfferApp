@@ -8,14 +8,35 @@ $(document).on('click', '#ShowHidden', async function () {
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-
-
-
-
-
     "use strict";
 
     var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+   
+    connection.on("UpdateUserList", function (users) {
+        const userList = document.getElementById("onlineUser");
+        userList.innerHTML = "";
+
+        users.forEach(function (user) {
+            const li = document.createElement("li");
+            li.textContent = user;
+           /* li.dataset.userId = user.Item2;*/
+            li.classList.add("user-item"); // Eklenen sýnýf
+            userList.appendChild(li);
+        });
+
+        // Kullanýcýlar dinamik olarak eklendiði için her seferinde olaylarý yeniden eklememiz gerekiyor
+        const userItems = document.querySelectorAll(".user-item");
+        userItems.forEach(item => {
+            item.addEventListener("click", function () {
+                userItems.forEach(i => i.classList.remove("selected")); // Önceki seçimleri kaldýr
+                this.classList.add("selected"); // Seçilen kullanýcýya sýnýf ekle
+            });
+        });
+    });
+
+
+
+ 
 
     //Disable the send button until connection is established.
     document.getElementById("sendButton").disabled = true;
@@ -23,9 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     connection.on("ReceiveMessage", function (user, message) {
         var li = document.createElement("li");
         document.getElementById("messagesList").appendChild(li);
-        // We can assign user-supplied strings to an element's textContent because it
-        // is not interpreted as markup. If you're assigning in any other way, you 
-        // should be aware of possible script injection concerns.
         li.textContent = `${user} : ${message}`;
     });
 
