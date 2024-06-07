@@ -112,6 +112,7 @@ function FillOutList() {
         type: 'GET',
         dataType: 'json',
         success: function (Customers) {
+
             $.each(Customers, function (index, Customer) {
                 addRow(Customer);
             });
