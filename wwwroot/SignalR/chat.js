@@ -11,15 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
     "use strict";
 
     var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
-   
+    var selectedUserId = null;
     connection.on("UpdateUserList", function (users) {
         const userList = document.getElementById("onlineUser");
         userList.innerHTML = "";
-
-        users.forEach(function (user) {
+        const usersJson = JSON.parse(users);
+        usersJson.forEach(function (user) {
             const li = document.createElement("li");
-            li.textContent = user;
-           /* li.dataset.userId = user.Item2;*/
+            li.textContent = user.Item1;
+            li.dataset.userId = user.Item2;
             li.classList.add("user-item"); // Eklenen sýnýf
             userList.appendChild(li);
         });
@@ -28,8 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const userItems = document.querySelectorAll(".user-item");
         userItems.forEach(item => {
             item.addEventListener("click", function () {
-                userItems.forEach(i => i.classList.remove("selected")); // Önceki seçimleri kaldýr
-                this.classList.add("selected"); // Seçilen kullanýcýya sýnýf ekle
+                userItems.forEach(i => i.classList.remove("selected"));
+                this.classList.add("selected");
+                selectedUserId = this.dataset.userId; // Seçili kullanýcýnýn kimliðini sakla
             });
         });
     });
@@ -53,11 +54,17 @@ document.addEventListener("DOMContentLoaded", function () {
         return console.error(err.toString());
     });
 
-    document.getElementById("sendButton").addEventListener("click", function (event) {
+      document.getElementById("sendButton").addEventListener("click", function (event) {
         var message = document.getElementById("messageInput").value;
-        connection.invoke("SendMessage", message).catch(function (err) {
-            return console.error(err.toString());
-        });
+        if (selectedUserId) {
+            connection.invoke("SendMessageToUser", selectedUserId, message).catch(function (err) {
+                return console.error(err.toString());
+            });
+        } else {
+            connection.invoke("SendMessage", message).catch(function (err) {
+                return console.error(err.toString());
+            });
+        }
         event.preventDefault();
     });
 });
