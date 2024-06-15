@@ -74,7 +74,25 @@ namespace OfferApp.Controllers
             return View(model);
         }
 
+        [HttpGet]      
+        [Route("Offer/OfferSheet/{OfferSira?}")]
+        public IActionResult OfferSheet(int? OfferSira)
+        {
+            ViewModels.VMOffer model = new VMOffer();
+            if (OfferSira.HasValue && OfferSira.Value != 0)
+            {
 
+                model.Offers = _context.Offers
+                    .Include(o => o.Customer)
+                    .Include(o => o.Product)
+                    .Where(x => x.OfferSira == OfferSira).ToList();
+                model._Offer = model.Offers.First();
+
+             
+                return PartialView("Subpages/_OfferSheet", model);
+            }
+            return PartialView("Subpages/_OfferSheet", model);
+        }
 
         [HttpGet]
         [Route("Offer/OfferSira")]

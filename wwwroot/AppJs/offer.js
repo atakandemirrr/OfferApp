@@ -1,4 +1,5 @@
-﻿
+﻿///modal alma işlemleri
+var Modal1 = $('#MOfferSheet');
 
 ///sayfa açıldığında listeyi oluştur
 $(document).ready(function () {
@@ -19,7 +20,7 @@ function FillOutList() {
                 addRow(Offer);
             });
             function addRow(Offer) {
-                $('#OfferTable').append('<tr><td>' + Offer.name + '</td><td>' + Offer.seriSira + '</td><td>' + Offer.offerDate + '</td><td>' + Offer.deliveryDate + '</td><td>' + Offer.total + '</td><td><a id="editProduct" data-userTableId="" href="CreateOffer/' + Offer.offerSira + '"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>');
+                $('#OfferTable').append('<tr><td>' + Offer.name + '</td><td>' + Offer.seriSira + '</td><td>' + Offer.offerDate + '</td><td>' + Offer.deliveryDate + '</td><td>' + Offer.total + '</td><td>' + '<a href="#" id="btnOpenModal" data-url="/Offer/OfferSheet/'+Offer.offerSira+'" data-zindex="1"> <i style="font-size: 24px;" class="icofont icofont-list"></i></a >' + '</td><td><a href="CreateOffer/' + Offer.offerSira + '"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>');
 
             }
         },
@@ -256,29 +257,34 @@ function EkleIslemleri() {
 $(document).ready(function () {
     var deger = $("#OfferSeri").val();
 
-    if (deger == '') {
-        $.ajax({
-            url: '/Offer/OfferSira',
-            type: 'GET',
-            success: function (response) {
-                $("#OfferSira").val(response);
-                $("#OfferSeri").val('ABC');
-                var metin = 'Teklif Seri - Sira : ABC - ' + response + '';
-                const hElement = document.getElementById("serisira");
-                hElement.textContent = metin;
 
-            },
-            error: function (xhr, status, error) {
-                console.error("Bir hata oluştu: ", error);
-            }
-        });
-    } else {
+    if (typeof deger !== 'undefined') {
+        if (deger == '') {
+            $.ajax({
+                url: '/Offer/OfferSira',
+                type: 'GET',
+                success: function (response) {
+                    $("#OfferSira").val(response);
+                    $("#OfferSeri").val('ABC');
+                    var metin = 'Teklif Seri - Sira : ABC - ' + response + '';
+                    const hElement = document.getElementById("serisira");
+                    hElement.textContent = metin;
 
-        var sira = $("#OfferSira").val();
-        var metin = 'Teklif Seri - Sira : ABC - ' + sira + '';
-        const hElement = document.getElementById("serisira");
-        hElement.textContent = metin;
+                },
+                error: function (xhr, status, error) {
+                    console.error("Bir hata oluştu: ", error);
+                }
+            });
+        } else {
+
+            var sira = $("#OfferSira").val();
+            var metin = 'Teklif Seri - Sira : ABC - ' + sira + '';
+            const hElement = document.getElementById("serisira");
+            hElement.textContent = metin;
+        }
     }
+
+   
 
 })
 
@@ -372,7 +378,7 @@ $(document).on('click', '#update', async function () {
 });
 
 
-/*Sil butonuna tıklayınca*/ 
+/*Sil butonuna tıklayınca*/
 $(document).on('click', '#silButton', async function () {
     //güncellenmiş veriler
     var UserTableID = $(this).attr("data-usertableid");
@@ -381,7 +387,7 @@ $(document).on('click', '#silButton', async function () {
     $.ajax({
         url: '/Offer/RowDeleteOffer/' + UserTableID + '',
         type: 'Post',
-       
+
         success: function () {
             var element = $('[data-usertableid="' + UserTableID + '"]')[0]; // jQuery ile elementi seç
             if (element) {
