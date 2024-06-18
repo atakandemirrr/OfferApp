@@ -410,6 +410,9 @@ $(document).on('click', '#silButton', async function () {
 function printModalBody() {
     var printContents = document.getElementById('modal-body-content').innerHTML;
     var originalContents = document.body.innerHTML; 
+
+
+
     document.body.innerHTML = printContents;
      window.print();   
     document.body.innerHTML = originalContents;
