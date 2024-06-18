@@ -20,7 +20,7 @@ function FillOutList() {
                 addRow(Offer);
             });
             function addRow(Offer) {
-                $('#OfferTable').append('<tr><td>' + Offer.name + '</td><td>' + Offer.seriSira + '</td><td>' + Offer.offerDate + '</td><td>' + Offer.deliveryDate + '</td><td>' + Offer.total + '</td><td>' + '<a href="#" id="btnOpenModal" data-url="/Offer/OfferSheet/'+Offer.offerSira+'" data-zindex="1"> <i style="font-size: 24px;" class="icofont icofont-list"></i></a >' + '</td><td><a href="CreateOffer/' + Offer.offerSira + '"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>');
+                $('#OfferTable').append('<tr><td>' + Offer.name + '</td><td>' + Offer.seriSira + '</td><td>' + Offer.offerDate + '</td><td>' + Offer.deliveryDate + '</td><td>' + Offer.total + '</td><td>' + '<a href="#" id="btnOpenModal" data-url="/Offer/OfferSheet/' + Offer.offerSira + '" data-zindex="1"> <i style="font-size: 24px;" class="icofont icofont-list"></i></a >' + '</td><td><a href="CreateOffer/' + Offer.offerSira + '"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a></td></tr>');
 
             }
         },
@@ -284,7 +284,7 @@ $(document).ready(function () {
         }
     }
 
-   
+
 
 })
 
@@ -406,5 +406,44 @@ $(document).on('click', '#silButton', async function () {
     });
 });
 
+///yazdırma işlemi
+function printModalBody() {
+    var printContents = document.getElementById('modal-body-content').innerHTML;
+    var originalContents = document.body.innerHTML; 
+    document.body.innerHTML = printContents;
+     window.print();   
+    document.body.innerHTML = originalContents;
+    location.reload();
 
+    
+}
 
+/////İndire İşlemleri
+
+function generatePDF() {
+    var element = document.getElementById('modal-body-content');
+
+    html2canvas(element, {
+        scale: 2
+    }).then(canvas => {
+        var imgData = canvas.toDataURL('image/png');
+        var pdf = new jsPDF('p', 'mm', 'a4');
+        var imgWidth = 210;
+        var pageHeight = 297;
+        var imgHeight = canvas.height * imgWidth / canvas.width;
+        var heightLeft = imgHeight;
+
+        var position = 0;
+
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        while (heightLeft >= 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+        }
+        pdf.save('siparis_formu.pdf');
+    });
+}
