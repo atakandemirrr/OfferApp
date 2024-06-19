@@ -409,44 +409,44 @@ $(document).on('click', '#silButton', async function () {
 ///yazdırma işlemi
 function printModalBody() {
     var printContents = document.getElementById('modal-body-content').innerHTML;
-    var originalContents = document.body.innerHTML; 
+    var originalContents = document.body.innerHTML;
 
 
 
     document.body.innerHTML = printContents;
-     window.print();   
+    window.print();
     document.body.innerHTML = originalContents;
     location.reload();
 
-    
+
 }
 
 /////İndire İşlemleri
 
-function generatePDF() {
-    var element = document.getElementById('modal-body-content');
+async function generatePdf() {
+    var CusName = document.getElementById("CusName").innerHTML
 
-    html2canvas(element, {
-        scale: 2
-    }).then(canvas => {
-        var imgData = canvas.toDataURL('image/png');
-        var pdf = new jsPDF('p', 'mm', 'a4');
-        var imgWidth = 210;
-        var pageHeight = 297;
-        var imgHeight = canvas.height * imgWidth / canvas.width;
-        var heightLeft = imgHeight;
-
-        var position = 0;
-
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-
-        while (heightLeft >= 0) {
-            position = heightLeft - imgHeight;
-            pdf.addPage();
-            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-        }
-        pdf.save('siparis_formu.pdf');
+    var headHtml = document.head.outerHTML;
+    const combinedHtml = document.getElementById('modal-body-content').innerHTML;
+    var layoutScript = document.getElementById('LayoutScript').innerHTML;
+    var htmlContent = headHtml + combinedHtml + layoutScript;
+    const response = await fetch('/api/pdf/generate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ htmlContent: htmlContent })
     });
+    if (response.ok) {
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = ''+CusName+'.pdf';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+    } else {
+        alert('PDF generation failed');
+    }
 }

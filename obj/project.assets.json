@@ -2210,6 +2210,24 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
         }
       },
+      "PuppeteerSharp/18.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Extensions.Logging": "2.0.2",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/PuppeteerSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/PuppeteerSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.CodeDom/5.0.0": {
         "type": "package",
         "compile": {
@@ -6903,6 +6921,19 @@
         "nuget.versioning.nuspec"
       ]
     },
+    "PuppeteerSharp/18.0.1": {
+      "sha512": "aKCjiCqsi2/NmBd8wLABCaUd7s/UxfnYacfrq000WdNL9/pVslN8tTsu6jUbKAjwvYBl9BTWJRFH9O41OTRMEA==",
+      "type": "package",
+      "path": "puppeteersharp/18.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/PuppeteerSharp.dll",
+        "lib/netstandard2.0/PuppeteerSharp.xml",
+        "puppeteersharp.18.0.1.nupkg.sha512",
+        "puppeteersharp.nuspec"
+      ]
+    },
     "System.CodeDom/5.0.0": {
       "sha512": "JPJArwA1kdj8qDAkY2XGjSWoYnqiM7q/3yRNkt6n28Mnn95MuEGkZXUbPBf7qc3IjwrGY5ttQon7yqHZyQJmOQ==",
       "type": "package",
@@ -8392,7 +8423,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.4",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.2",
-      "Newtonsoft.Json >= 13.0.3"
+      "Newtonsoft.Json >= 13.0.3",
+      "PuppeteerSharp >= 18.0.1"
     ]
   },
   "packageFolders": {
@@ -8464,6 +8496,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
+          },
+          "PuppeteerSharp": {
+            "target": "Package",
+            "version": "[18.0.1, )"
           }
         },
         "imports": [

@@ -516,3 +516,4 @@ C:\Users\user\Desktop\Repostory\OfferApp\bin\Debug\net8.0\zh-Hans\Microsoft.Code
 C:\Users\user\Desktop\Repostory\OfferApp\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\user\Desktop\Repostory\OfferApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\user\Desktop\Repostory\OfferApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\user\Desktop\Repostory\OfferApp\bin\Debug\net8.0\PuppeteerSharp.dll

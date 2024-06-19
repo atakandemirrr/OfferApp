@@ -43,7 +43,7 @@
                                             <div class="media">
                                                 <div class="media-left"><img class="media-object rounded-circle img-60" src="~/images/user/7.jpg" alt=""></div>
                                                 <div class="media-body m-l-20">
-                                                    <h4 class="media-heading f-w-600">@Model._Offer.Customer.Name</h4>
+                                                    <h4 id="CusName" class="media-heading f-w-600">@Model._Offer.Customer.Name</h4>
                                                     <p>email bilgisi<br><span class="digits">tel no</span></p>
                                                 </div>
                                             </div>
@@ -105,7 +105,7 @@
         <div class="modal-footer">
             <div class="col-sm-12 text-center mt-3">
                 <button type="button" class="btn btn-primary me-2" onclick="printModalBody()">Yazdır</button>
-                <button class="btn btn btn-primary me-2" type="button" onclick="generatePDF()" readonly>İndir</button>
+                <button class="btn btn btn-primary me-2" type="button" onclick="generatePdf()" readonly>İndir</button>
             </div>
         </div>
 
