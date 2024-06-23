@@ -119,11 +119,13 @@ namespace OfferApp.Controllers
 
                 _context.Offers.Add(offer);
                 _context.SaveChanges();
-                var sonEklenen = _context.Offers
-                                        .Where(o => o.OfferSeri == offer.OfferSeri && o.OfferSira == offer.OfferSira && o.CreateUser == offer.CreateUser)
-                                        .OrderByDescending(o => o.UserTableId)
-                                        .Select(o => o.UserTableId)
-                                        .FirstOrDefault();
+                //var sonEklenen = _context.Offers
+                //                        .Where(o => o.OfferSeri == offer.OfferSeri && o.OfferSira == offer.OfferSira && o.CreateUser == offer.CreateUser)
+                //                        .OrderByDescending(o => o.UserTableId)
+                //                        .Select(o => o.UserTableId)
+                //                        .FirstOrDefault();
+                var sonEklenen = offer.UserTableId;
+
 
                 return Json(sonEklenen.ToString());
             }

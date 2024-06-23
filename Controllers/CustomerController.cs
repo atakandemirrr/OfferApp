@@ -90,8 +90,8 @@ namespace OfferApp.Controllers
                 _context.SaveChanges();
 
                 // Eklenen son kaydın UserTableId değerini almak için:
-                var lastRecord = _context.Customers.OrderByDescending(o => o.UserTableId).FirstOrDefault(o => o.CreateUser == A.CreateUser);
-                int userTableId = lastRecord.UserTableId;
+                //var lastRecord = _context.Customers.OrderByDescending(o => o.UserTableId).FirstOrDefault(o => o.CreateUser == A.CreateUser);
+                int userTableId = Customer.UserTableId;
 
                 return Json(userTableId.ToString());
             }
